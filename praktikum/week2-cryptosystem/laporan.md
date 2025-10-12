@@ -41,6 +41,7 @@ Kelas: 5IKRB
    Nilai rahasia yang digunakan dalam proses enkripsi dan dekripsi. Pada sistem simetris digunakan satu kunci yang sama, sedangkan pada      sistem asimetris digunakan dua kunci, yaitu kunci publik dan kunci privat.
 
 ## Skema Kriptosistem
+<img width="511" height="51" alt="skema kriptosistem" src="https://github.com/user-attachments/assets/e91bcaef-f1c2-4ea5-86d7-95ae8a008193" /> 
 
 
 ## Implementasi program sederhana
