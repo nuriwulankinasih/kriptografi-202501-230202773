@@ -93,9 +93,9 @@ Simulasi enkripsi & dekripsi menggunakan substitusi sederhana (misalnya Caesar C
 - Google schollar.
 
 # 4. Langkah Percobaan
-1. Membuat file simple_cryptosystem.py di folder praktikum/week2-cryptosystem/src/.
+1. Membuat file simple-cryptosystem.py di folder praktikum/week2-cryptosystem/src/.
 2. Menyalin kode program dari panduan praktikum.
-3. Menjalankan program dengan perintah python simple_cryptosystem.py.
+3. Menjalankan program dengan perintah python simple-cryptosystem.py.
 4. Membuat ringkasan perbedaan antara kriptosistem simetris dan asimetris.
 5. Mengaploud hasil eksekusi di folder praktikum/week2-cryptosistem/screenshots/
 6. Menjawab pertanyaan diskusi.
