@@ -136,8 +136,11 @@ Simulasi enkripsi & dekripsi menggunakan substitusi sederhana (misalnya Caesar C
 
 # 6. Hasil dan Pembahasan
 Diagram Kriptosistem: 
+
 <img width="511" height="51" alt="skema kriptosistem" src="https://github.com/user-attachments/assets/1788ec83-e53c-44d4-b511-cb3b17fbe3e2" />
+
 Hasil eksekusi program Caesar Cipher:
+
 <img width="1366" height="768" alt="hasil-eksekusi" src="https://github.com/user-attachments/assets/27c3c97f-7987-4a45-acc8-f13df9e8fec5" />
 
 # 7. Jawaban Pertanyaan
