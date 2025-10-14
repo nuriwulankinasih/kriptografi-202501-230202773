@@ -160,18 +160,24 @@ Jawaban :
 
 2. Kelebihan dan Kelemahan Sistem Simetris dan Asimetris
    ## Sistem Kriptografi Simetris
-      Kelebihan : - Proses enkripsi dan dekripsi lebih cepat, karena menggunakan algoritma sederhana.
-                  - Kebutuhan komputasi lebih ringan, cocok untuk data besar atau sistem real-time.
-      Kelemahan : - Distribusi kunci sulit dan berisiko, karena kunci harus dikirim ke penerima secara aman.
-                  - Tidak cocok untuk sistem dengan banyak pengguna, karena setiap pasangan pengguna memerlukan kunci rahasia tersendiri.
+      Kelebihan :
+         - Proses enkripsi dan dekripsi lebih cepat, karena menggunakan algoritma sederhana.
+         - Kebutuhan komputasi lebih ringan, cocok untuk data besar atau sistem real-time.
+   
+      Kelemahan :
+         - Distribusi kunci sulit dan berisiko, karena kunci harus dikirim ke penerima secara aman.
+         - Tidak cocok untuk sistem dengan banyak pengguna, karena setiap pasangan pengguna memerlukan kunci rahasia tersendiri.
 
    ## Sistem Kriptografi Asimetris
-      Kelebihan : - Distribusi kunci lebih aman, karena menggunakan pasangan kunci publik dan privat.
-                  - Autentikasi dan tanda tangan digital dapat dilakukan dengan mudah.
-      Kelemahan : - Proses enkripsi lebih lambat, karena algoritmanya kompleks.
-                  - Membutuhkan daya komputasi tinggi, terutama untuk kunci besar.
+      Kelebihan :
+         - Distribusi kunci lebih aman, karena menggunakan pasangan kunci publik dan privat.
+         - Autentikasi dan tanda tangan digital dapat dilakukan dengan mudah.
+   
+      Kelemahan :
+         - Proses enkripsi lebih lambat, karena algoritmanya kompleks.
+         - Membutuhkan daya komputasi tinggi, terutama untuk kunci besar.
 
-3. Distribusi kunci menjadi masalah utama dalam kriptografi simetris karena pengirim dan penerima harus menggunakan kunci rahasia yang sama, sehingga kunci        harus dikirim terlebih dahulu secara aman. Jika kunci tersebut dicegat pihak lain, keamanan seluruh sistem akan terancam.
+4. Distribusi kunci menjadi masalah utama dalam kriptografi simetris karena pengirim dan penerima harus menggunakan kunci rahasia yang sama, sehingga kunci        harus dikirim terlebih dahulu secara aman. Jika kunci tersebut dicegat pihak lain, keamanan seluruh sistem akan terancam.
    
 # 8. Kesimpulan
 Kriptosistem merupakan dasar dari keamanan data digital dengan tujuan melindungi pesan melalui proses enkripsi dan dekripsi. Sistem kriptografi simetris menggunakan satu kunci yang sama untuk kedua proses, sedangkan sistem asimetris menggunakan pasangan kunci publik dan privat. Meskipun kriptografi simetris lebih cepat, distribusi kuncinya menjadi tantangan utama, sementara kriptografi asimetris lebih aman namun membutuhkan komputasi yang lebih tinggi.
