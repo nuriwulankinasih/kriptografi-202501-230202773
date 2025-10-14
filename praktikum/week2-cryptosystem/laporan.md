@@ -48,7 +48,6 @@ Kelas: 5IKRB
 menggunakan caesar cipher
 
    # file: praktikum/week2-cryptosystem/src/simple_crypto.py
-
       def encrypt(plaintext, key):
           result = ""
           for char in plaintext:
@@ -80,11 +79,11 @@ menggunakan caesar cipher
           print("Ciphertext:", enc)
           print("Decrypted :", dec)
 
-Ekspektasi Keluaran
+   Ekspektasi Keluaran
 
-Plaintext : <230202773><Nuri Wulan Kinasih>
-Ciphertext: <230202773><Szwn Bzqfs Pnsfxnm>
-Decrypted : <230202773><Nuri Wulan Kinasih>
+         Plaintext : <230202773><Nuri Wulan Kinasih>
+         Ciphertext: <230202773><Szwn Bzqfs Pnsfxnm>
+         Decrypted : <230202773><Nuri Wulan Kinasih>
 
 ## 3. Alat dan Bahan
 (- Python 3.x  
