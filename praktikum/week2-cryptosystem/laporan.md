@@ -86,10 +86,12 @@ Simulasi enkripsi & dekripsi menggunakan substitusi sederhana (misalnya Caesar C
          Decrypted : <230202773><Nuri Wulan Kinasih>
 
 ## 3. Alat dan Bahan
-(- Python 3.x  
-- Visual Studio Code / editor lain  
-- Git dan akun GitHub  
-- Library tambahan (misalnya pycryptodome, jika diperlukan)  )
+- Python 3.x
+- Visual Studio Code
+- Git dan akun GitHub
+- Google chrome
+- Google schollar.
+
 
 ---
 
