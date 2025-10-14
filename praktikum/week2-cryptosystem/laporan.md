@@ -191,8 +191,10 @@ Contoh:
 ---
 
 # 10. Commit Log
+```
 commit week2-cryptosystem 
 Author : Nuri Wulan Kinasih <kinasihnuri60@gmail.com> 
 Date : 2025-10-14 
 
     week2-cryptosystem: implementasi Caesar Cipher dan laporan )
+```
