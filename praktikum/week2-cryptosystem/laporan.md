@@ -149,13 +149,13 @@ Hasil eksekusi program Caesar Cipher:
 3. Mengapa distribusi kunci menjadi masalah utama dalam kriptografi simetris?
 
 Jawaban :
- 1. - Plaintext
+ 1. - Plaintext : 
       Merupakan pesan atau data asli yang ingin diamankan sebelum dienkripsi. Plaintext masih dapat dibaca dan dipahami oleh siapa pun.
-    - Ciphertext
+    - Ciphertext : 
       Adalah hasil dari proses enkripsi terhadap plaintext. Bentuknya berupa teks acak yang tidak dapat dibaca tanpa kunci yang benar.
-    - Algoritma Enkripsi dan Dekripsi
+    - Algoritma Enkripsi dan Dekripsi : 
       Algoritma enkripsi digunakan untuk mengubah plaintext menjadi ciphertext, sedangkan algoritma dekripsi digunakan untuk mengembalikan      ciphertext            menjadi plaintext.
-    - Kunci (Key)
+    - Kunci (Key) : 
       Nilai rahasia yang digunakan dalam proses enkripsi dan dekripsi. Pada sistem simetris digunakan satu kunci yang sama, sedangkan pada      sistem                asimetris digunakan dua kunci, yaitu kunci publik dan kunci privat.
 
 2. Kelebihan dan Kelemahan Sistem Simetris dan Asimetris
