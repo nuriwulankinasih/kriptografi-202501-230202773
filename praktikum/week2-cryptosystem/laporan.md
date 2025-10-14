@@ -144,16 +144,37 @@ Hasil eksekusi program Caesar Cipher:
 <img width="1366" height="768" alt="hasil-eksekusi" src="https://github.com/user-attachments/assets/27c3c97f-7987-4a45-acc8-f13df9e8fec5" />
 
 # 7. Jawaban Pertanyaan
-(Jawab pertanyaan diskusi yang diberikan pada modul.  
-- Pertanyaan 1: …  
-- Pertanyaan 2: …  
-)
----
+1. Sebutkan komponen utama dalam sebuah kriptosistem.
+2. Apa kelebihan dan kelemahan sistem simetris dibandingkan asimetris?
+3. Mengapa distribusi kunci menjadi masalah utama dalam kriptografi simetris?
 
+Jawaban :
+ 1. - Plaintext
+      Merupakan pesan atau data asli yang ingin diamankan sebelum dienkripsi. Plaintext masih dapat dibaca dan dipahami oleh siapa pun.
+    - Ciphertext
+      Adalah hasil dari proses enkripsi terhadap plaintext. Bentuknya berupa teks acak yang tidak dapat dibaca tanpa kunci yang benar.
+    - Algoritma Enkripsi dan Dekripsi
+      Algoritma enkripsi digunakan untuk mengubah plaintext menjadi ciphertext, sedangkan algoritma dekripsi digunakan untuk mengembalikan      ciphertext            menjadi plaintext.
+    - Kunci (Key)
+      Nilai rahasia yang digunakan dalam proses enkripsi dan dekripsi. Pada sistem simetris digunakan satu kunci yang sama, sedangkan pada      sistem                asimetris digunakan dua kunci, yaitu kunci publik dan kunci privat.
+
+2. Kelebihan dan Kelemahan Sistem Simetris dan Asimetris
+   ## Sistem Kriptografi Simetris
+      Kelebihan : - Proses enkripsi dan dekripsi lebih cepat, karena menggunakan algoritma sederhana.
+                  - Kebutuhan komputasi lebih ringan, cocok untuk data besar atau sistem real-time.
+      Kelemahan : - Distribusi kunci sulit dan berisiko, karena kunci harus dikirim ke penerima secara aman.
+                  - Tidak cocok untuk sistem dengan banyak pengguna, karena setiap pasangan pengguna memerlukan kunci rahasia tersendiri.
+
+   ## Sistem Kriptografi Asimetris
+      Kelebihan : - Distribusi kunci lebih aman, karena menggunakan pasangan kunci publik dan privat.
+                  - Autentikasi dan tanda tangan digital dapat dilakukan dengan mudah.
+      Kelemahan : - Proses enkripsi lebih lambat, karena algoritmanya kompleks.
+                  - Membutuhkan daya komputasi tinggi, terutama untuk kunci besar.
+
+3. Distribusi kunci menjadi masalah utama dalam kriptografi simetris karena pengirim dan penerima harus menggunakan kunci rahasia yang sama, sehingga kunci        harus dikirim terlebih dahulu secara aman. Jika kunci tersebut dicegat pihak lain, keamanan seluruh sistem akan terancam.
+   
 # 8. Kesimpulan
-(Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
-
----
+Kriptosistem merupakan dasar dari keamanan data digital dengan tujuan melindungi pesan melalui proses enkripsi dan dekripsi. Sistem kriptografi simetris menggunakan satu kunci yang sama untuk kedua proses, sedangkan sistem asimetris menggunakan pasangan kunci publik dan privat. Meskipun kriptografi simetris lebih cepat, distribusi kuncinya menjadi tantangan utama, sementara kriptografi asimetris lebih aman namun membutuhkan komputasi yang lebih tinggi.
 
 # 9. Daftar Pustaka
 (Cantumkan referensi yang digunakan.  
@@ -164,12 +185,10 @@ Contoh:
 ---
 
 # 10. Commit Log
-(Tuliskan bukti commit Git yang relevan.  
-Contoh:
-```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
+
+commit week2-cryptosystem
+Author: Nuri Wulan Kinasih <kinasihnuri60@gmail.com>
+Date:   2025-10-14
 
     week2-cryptosystem: implementasi Caesar Cipher dan laporan )
 ```
