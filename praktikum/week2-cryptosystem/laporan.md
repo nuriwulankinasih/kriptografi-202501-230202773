@@ -85,66 +85,74 @@ Simulasi enkripsi & dekripsi menggunakan substitusi sederhana (misalnya Caesar C
          Ciphertext: <230202773><Szwn Bzqfs Pnsfxnm>
          Decrypted : <230202773><Nuri Wulan Kinasih>
 
-## 3. Alat dan Bahan
+# 3. Alat dan Bahan
 - Python 3.x
 - Visual Studio Code
 - Git dan akun GitHub
 - Google chrome
 - Google schollar.
 
-
----
-
-## 4. Langkah Percobaan
-(Tuliskan langkah yang dilakukan sesuai instruksi.  
-Contoh format:
-1. Membuat file `caesar_cipher.py` di folder `praktikum/week2-cryptosystem/src/`.
+# 4. Langkah Percobaan
+1. Membuat file simple-cryptosystem.py di folder praktikum/week2-cryptosystem/src/.
 2. Menyalin kode program dari panduan praktikum.
-3. Menjalankan program dengan perintah `python caesar_cipher.py`.)
+3. Menjalankan program dengan perintah python simple-cryptosystem.py.
+4. Membuat ringkasan perbedaan antara kriptosistem simetris dan asimetris.
+5. Mengaploud hasil eksekusi di folder praktikum/week2-cryptosistem/screenshots/
+6. Menjawab pertanyaan diskusi.
 
----
+# 5. Source Code
 
-## 5. Source Code
-(Salin kode program utama yang dibuat atau dimodifikasi.  
-Gunakan blok kode:
+      # file: praktikum/week2-cryptosystem/src/simple_crypto.py
+      def encrypt(plaintext, key):
+          result = ""
+          for char in plaintext:
+              if char.isalpha():
+                  shift = 65 if char.isupper() else 97
+                  result += chr((ord(char) - shift + key) % 26 + shift)
+              else:
+                  result += char
+          return result
+      
+      def decrypt(ciphertext, key):
+          result = ""
+          for char in ciphertext:
+              if char.isalpha():
+                  shift = 65 if char.isupper() else 97
+                  result += chr((ord(char) - shift - key) % 26 + shift)
+              else:
+                  result += char
+          return result
+      
+      if __name__ == "__main__":
+          message = "<230202773><Nuri Wulan Kinasih>"
+          key = 5
+      
+          enc = encrypt(message, key)
+          dec = decrypt(enc, key)
+      
+          print("Plaintext :", message)
+          print("Ciphertext:", enc)
+          print("Decrypted :", dec)
 
-```python
-# contoh potongan kode
-def encrypt(text, key):
-    return ...
-```
-)
-
----
-
-## 6. Hasil dan Pembahasan
-(- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
-- Berikan tabel atau ringkasan hasil uji jika diperlukan.  
-- Jelaskan apakah hasil sesuai ekspektasi.  
-- Bahas error (jika ada) dan solusinya. 
-
+# 6. Hasil dan Pembahasan
+Diagram Kriptosistem: 
+<img width="511" height="51" alt="skema kriptosistem" src="https://github.com/user-attachments/assets/1788ec83-e53c-44d4-b511-cb3b17fbe3e2" />
 Hasil eksekusi program Caesar Cipher:
+<img width="1366" height="768" alt="hasil-eksekusi" src="https://github.com/user-attachments/assets/27c3c97f-7987-4a45-acc8-f13df9e8fec5" />
 
-![Hasil Eksekusi](screenshots/output.png)
-![Hasil Input](screenshots/input.png)
-![Hasil Output](screenshots/output.png)
-)
-
----
-
-## 7. Jawaban Pertanyaan
+# 7. Jawaban Pertanyaan
 (Jawab pertanyaan diskusi yang diberikan pada modul.  
 - Pertanyaan 1: …  
 - Pertanyaan 2: …  
 )
 ---
 
-## 8. Kesimpulan
+# 8. Kesimpulan
 (Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
 
 ---
 
-## 9. Daftar Pustaka
+# 9. Daftar Pustaka
 (Cantumkan referensi yang digunakan.  
 Contoh:  
 - Katz, J., & Lindell, Y. *Introduction to Modern Cryptography*.  
@@ -152,7 +160,7 @@ Contoh:
 
 ---
 
-## 10. Commit Log
+# 10. Commit Log
 (Tuliskan bukti commit Git yang relevan.  
 Contoh:
 ```
