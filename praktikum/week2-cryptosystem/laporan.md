@@ -11,38 +11,9 @@ Kelas: 5IKRB
 3. Mengklasifikasikan jenis kriptosistem (simetris dan asimetris).
 
 # 2. Dasar Teori
-## Simetris & Asimetris
-1. Simetris
-   Kriptosistem simetris menggunakan satu kunci yang sama untuk mengenkripsi dan mendekripsi pesan. Keduanya (pengirim dan penerima)         harus memiliki kunci rahasia yang sama.
- 
-   Contoh Algoritma:
-    - AES (Advanced Encryption Standard)
-      Digunakan untuk mengamankan data pada aplikasi seperti WhatsApp dan Wi-Fi (WPA2/WPA3).
-      Misalnya, pesan “HELLO” dienkripsi dengan kunci “KUNCI123” dan hanya bisa dibuka kembali menggunakan kunci yang sama.
-    - DES (Data Encryption Standard)
-      Dulu digunakan dalam sistem perbankan dan ATM untuk mengenkripsi PIN atau data transaksi, tetapi sekarang sudah jarang dipakai            karena keamanannya dianggap kurang kuat.
-2. Asimetris
-   Kriptosistem asimetris menggunakan dua kunci berbeda, yaitu kunci publik (untuk enkripsi) dan kunci privat (untuk dekripsi). Hanya        pemilik kunci privat yang bisa membuka pesan yang dikunci dengan kunci publiknya.
 
-   Contoh Algoritma: 
-    - RSA (Rivest–Shamir–Adleman)
-      Digunakan dalam HTTPS, email terenkripsi (PGP), dan tanda tangan digital untuk mengamankan komunikasi di internet.
-    - ECC (Elliptic Curve Cryptography)
-      Banyak digunakan pada perangkat mobile dan dompet kripto (cryptocurrency wallets) karena tingkat keamanannya tinggi dengan ukuran         kunci yang lebih kecil.
-
-## Komponen Kriptosistem
-1. Plaintext
-   Merupakan pesan atau data asli yang ingin diamankan sebelum dienkripsi. Plaintext masih dapat dibaca dan dipahami oleh siapa pun.
-2. Ciphertext
-   Adalah hasil dari proses enkripsi terhadap plaintext. Bentuknya berupa teks acak yang tidak dapat dibaca tanpa kunci yang benar.
-3. Algoritma Enkripsi dan Dekripsi
-   Algoritma enkripsi digunakan untuk mengubah plaintext menjadi ciphertext, sedangkan algoritma dekripsi digunakan untuk mengembalikan      ciphertext menjadi plaintext.
-4. Kunci (Key)
-   Nilai rahasia yang digunakan dalam proses enkripsi dan dekripsi. Pada sistem simetris digunakan satu kunci yang sama, sedangkan pada      sistem asimetris digunakan dua kunci, yaitu kunci publik dan kunci privat.
-
-## Diagram Kriptosistem
+## Membuat skema kriptosistem
 <img width="511" height="51" alt="skema kriptosistem" src="https://github.com/user-attachments/assets/e91bcaef-f1c2-4ea5-86d7-95ae8a008193" /> 
-
 
 ## Implementasi program sederhana
 Simulasi enkripsi & dekripsi menggunakan substitusi sederhana (misalnya Caesar Cipher).
@@ -84,6 +55,35 @@ Simulasi enkripsi & dekripsi menggunakan substitusi sederhana (misalnya Caesar C
          Plaintext : <230202773><Nuri Wulan Kinasih>
          Ciphertext: <230202773><Szwn Bzqfs Pnsfxnm>
          Decrypted : <230202773><Nuri Wulan Kinasih>
+
+## Simetris & Asimetris
+1. Simetris
+   Kriptosistem simetris menggunakan satu kunci yang sama untuk mengenkripsi dan mendekripsi pesan. Keduanya (pengirim dan penerima)         harus memiliki kunci rahasia yang sama.
+ 
+   Contoh Algoritma:
+    - AES (Advanced Encryption Standard)
+      Digunakan untuk mengamankan data pada aplikasi seperti WhatsApp dan Wi-Fi (WPA2/WPA3).
+      Misalnya, pesan “HELLO” dienkripsi dengan kunci “KUNCI123” dan hanya bisa dibuka kembali menggunakan kunci yang sama.
+    - DES (Data Encryption Standard)
+      Dulu digunakan dalam sistem perbankan dan ATM untuk mengenkripsi PIN atau data transaksi, tetapi sekarang sudah jarang dipakai            karena keamanannya dianggap kurang kuat.
+2. Asimetris
+   Kriptosistem asimetris menggunakan dua kunci berbeda, yaitu kunci publik (untuk enkripsi) dan kunci privat (untuk dekripsi). Hanya        pemilik kunci privat yang bisa membuka pesan yang dikunci dengan kunci publiknya.
+
+   Contoh Algoritma: 
+    - RSA (Rivest–Shamir–Adleman)
+      Digunakan dalam HTTPS, email terenkripsi (PGP), dan tanda tangan digital untuk mengamankan komunikasi di internet.
+    - ECC (Elliptic Curve Cryptography)
+      Banyak digunakan pada perangkat mobile dan dompet kripto (cryptocurrency wallets) karena tingkat keamanannya tinggi dengan ukuran         kunci yang lebih kecil.
+
+## Komponen Kriptosistem
+1. Plaintext
+   Merupakan pesan atau data asli yang ingin diamankan sebelum dienkripsi. Plaintext masih dapat dibaca dan dipahami oleh siapa pun.
+2. Ciphertext
+   Adalah hasil dari proses enkripsi terhadap plaintext. Bentuknya berupa teks acak yang tidak dapat dibaca tanpa kunci yang benar.
+3. Algoritma Enkripsi dan Dekripsi
+   Algoritma enkripsi digunakan untuk mengubah plaintext menjadi ciphertext, sedangkan algoritma dekripsi digunakan untuk mengembalikan      ciphertext menjadi plaintext.
+4. Kunci (Key)
+   Nilai rahasia yang digunakan dalam proses enkripsi dan dekripsi. Pada sistem simetris digunakan satu kunci yang sama, sedangkan pada      sistem asimetris digunakan dua kunci, yaitu kunci publik dan kunci privat.
 
 # 3. Alat dan Bahan
 - Python 3.x
