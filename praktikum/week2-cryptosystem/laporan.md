@@ -161,19 +161,23 @@ Jawaban :
 2. Kelebihan dan Kelemahan Sistem Simetris dan Asimetris
    ## Sistem Kriptografi Simetris
       Kelebihan :
+   
          - Proses enkripsi dan dekripsi lebih cepat, karena menggunakan algoritma sederhana.
          - Kebutuhan komputasi lebih ringan, cocok untuk data besar atau sistem real-time.
    
       Kelemahan :
+   
          - Distribusi kunci sulit dan berisiko, karena kunci harus dikirim ke penerima secara aman.
          - Tidak cocok untuk sistem dengan banyak pengguna, karena setiap pasangan pengguna memerlukan kunci rahasia tersendiri.
 
    ## Sistem Kriptografi Asimetris
       Kelebihan :
+   
          - Distribusi kunci lebih aman, karena menggunakan pasangan kunci publik dan privat.
          - Autentikasi dan tanda tangan digital dapat dilakukan dengan mudah.
    
       Kelemahan :
+   
          - Proses enkripsi lebih lambat, karena algoritmanya kompleks.
          - Membutuhkan daya komputasi tinggi, terutama untuk kunci besar.
 
