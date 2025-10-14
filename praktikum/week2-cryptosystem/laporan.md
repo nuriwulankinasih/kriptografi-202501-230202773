@@ -47,6 +47,44 @@ Kelas: 5IKRB
 ## Implementasi program sederhana
 menggunakan caesar cipher
 
+# file: praktikum/week2-cryptosystem/src/simple_crypto.py
+
+def encrypt(plaintext, key):
+    result = ""
+    for char in plaintext:
+        if char.isalpha():
+            shift = 65 if char.isupper() else 97
+            result += chr((ord(char) - shift + key) % 26 + shift)
+        else:
+            result += char
+    return result
+
+def decrypt(ciphertext, key):
+    result = ""
+    for char in ciphertext:
+        if char.isalpha():
+            shift = 65 if char.isupper() else 97
+            result += chr((ord(char) - shift - key) % 26 + shift)
+        else:
+            result += char
+    return result
+
+if __name__ == "__main__":
+    message = "<230202773><Nuri Wulan Kinasih>"
+    key = 5
+
+    enc = encrypt(message, key)
+    dec = decrypt(enc, key)
+
+    print("Plaintext :", message)
+    print("Ciphertext:", enc)
+    print("Decrypted :", dec)
+
+Ekspektasi Keluaran
+
+Plaintext : <230202773><Nuri Wulan Kinasih>
+Ciphertext: <230202773><Szwn Bzqfs Pnsfxnm>
+Decrypted : <230202773><Nuri Wulan Kinasih>
 
 ## 3. Alat dan Bahan
 (- Python 3.x  
