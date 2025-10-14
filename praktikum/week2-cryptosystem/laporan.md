@@ -56,7 +56,7 @@ Simulasi enkripsi & dekripsi menggunakan substitusi sederhana (misalnya Caesar C
          Ciphertext: <230202773><Szwn Bzqfs Pnsfxnm>
          Decrypted : <230202773><Nuri Wulan Kinasih>
 
-## Simetris & Asimetris
+## Klasifikasi Simetris & Asimetris
 1. Simetris
    Kriptosistem simetris menggunakan satu kunci yang sama untuk mengenkripsi dan mendekripsi pesan. Keduanya (pengirim dan penerima)         harus memiliki kunci rahasia yang sama.
  
