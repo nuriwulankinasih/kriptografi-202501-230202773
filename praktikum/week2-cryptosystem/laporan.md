@@ -177,7 +177,7 @@ Jawaban :
      - Proses enkripsi lebih lambat, karena algoritmanya kompleks.
      - Membutuhkan daya komputasi tinggi, terutama untuk kunci besar.
 
-4. Distribusi kunci menjadi masalah utama dalam kriptografi simetris karena pengirim dan penerima harus menggunakan kunci rahasia yang sama, sehingga kunci        harus dikirim terlebih dahulu secara aman. Jika kunci tersebut dicegat pihak lain, keamanan seluruh sistem akan terancam.
+3. Distribusi kunci menjadi masalah utama dalam kriptografi simetris karena pengirim dan penerima harus menggunakan kunci rahasia yang sama, sehingga kunci        harus dikirim terlebih dahulu secara aman. Jika kunci tersebut dicegat pihak lain, keamanan seluruh sistem akan terancam.
    
 # 8. Kesimpulan
 Kriptosistem merupakan dasar dari keamanan data digital dengan tujuan melindungi pesan melalui proses enkripsi dan dekripsi. Sistem kriptografi simetris menggunakan satu kunci yang sama untuk kedua proses, sedangkan sistem asimetris menggunakan pasangan kunci publik dan privat. Meskipun kriptografi simetris lebih cepat, distribusi kuncinya menjadi tantangan utama, sementara kriptografi asimetris lebih aman namun membutuhkan komputasi yang lebih tinggi.
