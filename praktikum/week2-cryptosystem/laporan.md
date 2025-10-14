@@ -45,7 +45,7 @@ Kelas: 5IKRB
 
 
 ## Implementasi program sederhana
-menggunakan caesar cipher
+Simulasi enkripsi & dekripsi menggunakan substitusi sederhana (misalnya Caesar Cipher).
 
       # file: praktikum/week2-cryptosystem/src/simple_crypto.py
       def encrypt(plaintext, key):
