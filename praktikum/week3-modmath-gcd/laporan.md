@@ -1,9 +1,13 @@
 # Laporan Praktikum Kriptografi
 ---
-Minggu ke-: 3  
+Minggu ke-: 3 
+
 Topik: Modular Math (Aritmetika Modular, GCD, Bilangan Prima, Logaritma Diskrit)
+
 Nama: Nuri Wulan Kinasih
+
 NIM: 230202773
+
 Kelas: 5IKRB  
 
 ---
