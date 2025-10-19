@@ -16,7 +16,7 @@ Kelas: 5IKRB
 ---
 
 ## 2. Dasar Teori
-- Langkah 1 (Aritmetika Modular)
+a. Langkah 1 (Aritmetika Modular)
 ```
   def mod_add(a, b, n): return (a + b) % n
   def mod_sub(a, b, n): return (a - b) % n
@@ -33,7 +33,7 @@ Kelas: 5IKRB
   7 * 5 mod 12 = 11
   7^128 mod 13 = 3
 ```
-- Langkah 2 (GCD & Algoritma Euclidean)
+b. Langkah 2 (GCD & Algoritma Euclidean)
 ```
   def gcd(a, b):
     while b != 0:
@@ -46,7 +46,7 @@ Kelas: 5IKRB
 ```
   gcd(54, 24) = 6
 ```
-- Langkah 3 (Extended Euclidean Algorithm)
+c. Langkah 3 (Extended Euclidean Algorithm)
 ```
   def egcd(a, b):
     if a == 0:
@@ -66,7 +66,7 @@ Kelas: 5IKRB
 ```
   Invers 3 mod 11 = 4
 ```
-- Langkah 4 (Logaritma Diskrit)
+d. Langkah 4 (Logaritma Diskrit)
 ```
   def discrete_log(a, b, n):
     for x in range(n):
@@ -91,10 +91,10 @@ Kelas: 5IKRB
 ---
 
 ## 4. Langkah Percobaan
-1. Membuat file dengan nama `aritmatika_modular.py` di folder praktikum/week3-modmath/src/.
-2. Membuat file dengan nama `gcd-dan-algoritma euclidean.py` di folder praktikum/week3-modmath/src/.
-3. Membuat file dengan nama `extended-euclidean-algorithm.py` di folder praktikum/week3-modmath/src/.
-4. Membuat file dengan nama `logaritma-diskrit.py` di folder praktikum/week3-modmath/src/.
+1. Membuat file dengan nama `aritmatika_modular.py` di folder `praktikum/week3-modmath/src/`.
+2. Membuat file dengan nama `gcd-dan-algoritma euclidean.py` di folder `praktikum/week3-modmath/src/`.
+3. Membuat file dengan nama `extended-euclidean-algorithm.py` di folder `praktikum/week3-modmath/src/`.
+4. Membuat file dengan nama `logaritma-diskrit.py` di folder `praktikum/week3-modmath/src/`.
 5. Menyalin kode program dari panduan praktikum.
 6. Menjalankan program dengan perintah sesuai nama file.
 ---
@@ -171,12 +171,15 @@ Pembahasan: Semua langkah percobaan berhasil di eksekusi dengan benar tanpa eror
 
 ## 7. Jawaban Pertanyaan
 1. Apa peran aritmetika modular dalam kriptografi modern?
+   
    Jawaban: Peran aritmetika modular dalam kriptografi modern adalah memungkinkan operasi matematika dilakukan dalam ruang bilangan terbatas, sehingga                      mendukung proses enkripsi dan dekripsi yang aman tanpa menghasilkan nilai terlalu besar serta menjaga konsistensi hasil dalam sistem kunci publik               maupun simetris.
    
-3. Mengapa invers modular penting dalam algoritma kunci publik (misalnya RSA)?
+2. Mengapa invers modular penting dalam algoritma kunci publik (misalnya RSA)?
+   
    Jawaban: Invers modular penting dalam algoritma kunci publik seperti RSA karena digunakan untuk membalik proses enkripsi, yaitu menemukan kunci privat yang              dapat mendekripsi pesan yang telah dienkripsi menggunakan kunci publik, sehingga menjamin keamanan komunikasi antara pengirim dan penerima.
   
-4. Apa tantangan utama dalam menyelesaikan logaritma diskrit untuk modulus besar?
+3. Apa tantangan utama dalam menyelesaikan logaritma diskrit untuk modulus besar?
+   
    Jawaban: Tantangan utama dalam menyelesaikan logaritma diskrit untuk modulus besar adalah kompleksitas komputasinya yang sangat tinggi, sebab belum ada                  algoritma efisien untuk menghitungnya dengan cepat, hal ini justru menjadi dasar keamanan sistem kriptografi seperti Diffie–Hellman dan ElGamal.
    
 ---
