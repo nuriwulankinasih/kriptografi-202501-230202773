@@ -1,8 +1,12 @@
 # Laporan Praktikum Kriptografi
 Minggu ke-: 2
-Topik: cryptosystem [komponen,enkripsi,dekripsi,simetris,asimetris]  
+
+Topik: cryptosystem [komponen,enkripsi,dekripsi,simetris,asimetris] 
+
 Nama: Nuri Wulan Kinasih 
+
 NIM: 230202773 
+
 Kelas: 5IKRB 
 
 # 1. Tujuan
@@ -183,10 +187,7 @@ Jawaban :
 Kriptosistem merupakan dasar dari keamanan data digital dengan tujuan melindungi pesan melalui proses enkripsi dan dekripsi. Sistem kriptografi simetris menggunakan satu kunci yang sama untuk kedua proses, sedangkan sistem asimetris menggunakan pasangan kunci publik dan privat. Meskipun kriptografi simetris lebih cepat, distribusi kuncinya menjadi tantangan utama, sementara kriptografi asimetris lebih aman namun membutuhkan komputasi yang lebih tinggi.
 
 # 9. Daftar Pustaka
-(Cantumkan referensi yang digunakan.  
-Contoh:  
-- Katz, J., & Lindell, Y. *Introduction to Modern Cryptography*.  
-- Stallings, W. *Cryptography and Network Security*.  )
+Basri. (2016). Kriptografi Simetris dan Asimetris dalam Perspektif Keamanan Data dan Kompleksitas Komputasi. Jurnal Ilmiah Ilmu Komputer, 2(2), 16–23. Fakultas Ilmu Komputer, Universitas Al Asyariah Mandar. ISSN 2442-451X (Print), ISSN 2503-3832 (Online). http://ejournal.fikom-unasman.ac.id
 
 ---
 
