@@ -56,6 +56,7 @@ a. Langkah 1 --Perhitungan Entropy
     print("Entropy ruang kunci 26 =", entropy(26), "bit")
     print("Entropy ruang kunci 2^128 =", entropy(2**128), "bit")
 
+
     Hasilnya:
 
     Entropy ruang kunci 26 = 4.700439718141092 bit
@@ -73,6 +74,7 @@ b. Langkah 2 --Menghitung Unicity Distance
     HK = entropy(26)
     print("Unicity Distance untuk Caesar Cipher =", unicity_distance(HK))
 
+
     Hasilnya:
 
     Unicity Distance untuk Caesar Cipher = 1.3333333333333333
@@ -86,6 +88,7 @@ c. Langkah 3 --Analisis Brute Force
 
     print("Waktu brute force Caesar Cipher (26 kunci) =", brute_force_time(26), "hari")
     print("Waktu brute force AES-128 =", brute_force_time(2**128), "hari")
+
 
     Hasilnya:
 
