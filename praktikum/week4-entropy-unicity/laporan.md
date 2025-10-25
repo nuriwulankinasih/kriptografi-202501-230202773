@@ -1,20 +1,30 @@
 # Laporan Praktikum Kriptografi
-Minggu ke-: X  
-Topik: [judul praktikum]  
-Nama: [Nama Mahasiswa]  
-NIM: [NIM Mahasiswa]  
-Kelas: [Kelas]  
+Minggu ke-: 4
+Topik: Entropy & Unicity Distance (Evaluasi Kekuatan Kunci dan Brute Force) 
+
+Nama: Nuri Wulan Kinasih
+
+NIM: 230202773
+
+Kelas: 5IKRB
 
 ---
 
 ## 1. Tujuan
-(Tuliskan tujuan pembelajaran praktikum sesuai modul.)
+1. Menyelesaikan perhitungan sederhana terkait entropi kunci.
+2. Menggunakan teorema Euler pada contoh perhitungan modular & invers.
+3. Menghitung unicity distance untuk ciphertext tertentu.
+4. Menganalisis kekuatan kunci berdasarkan entropi dan unicity distance.
+5. Mengevaluasi potensi serangan brute force pada kriptosistem sederhana.
 
 ---
 
 ## 2. Dasar Teori
-(Ringkas teori relevan (cukup 2–3 paragraf).  
-Contoh: definisi cipher klasik, konsep modular aritmetika, dll.  )
+Entropy dalam konteks kriptografi menggambarkan tingkat ketidakpastian atau keacakan dalam sistem kunci. Semakin tinggi nilai entropi, semakin sulit bagi penyerang untuk menebak atau memprediksi kunci yang digunakan dalam proses enkripsi. Entropi biasanya diukur dalam bit; misalnya, sebuah kunci 128-bit dengan entropi penuh memiliki 2<sup>128</sup> kemungkinan kombinasi kunci. Dengan demikian, kunci dengan entropi tinggi dianggap lebih kuat karena memerlukan waktu dan sumber daya komputasi yang jauh lebih besar untuk dipecahkan menggunakan serangan brute force.
+
+Unicity distance merupakan ukuran teoretis yang digunakan untuk menentukan berapa banyak ciphertext yang diperlukan untuk secara unik menentukan kunci yang digunakan. Nilai ini tergantung pada panjang kunci dan redundansi dari plaintext yang dienkripsi. Jika jumlah ciphertext yang tersedia melebihi unicity distance, maka secara teori penyerang dapat menemukan satu-satunya kunci yang benar dengan analisis kriptografi yang tepat. Oleh karena itu, semakin besar unicity distance, semakin sulit pula menemukan kunci melalui analisis statistik.
+
+Dalam evaluasi kekuatan kunci, kombinasi antara entropi tinggi dan unicity distance yang besar menunjukkan sistem kriptografi yang kuat terhadap serangan brute force maupun analisis ciphertext. Brute force attack sendiri melibatkan percobaan semua kemungkinan kunci hingga menemukan yang sesuai, dan kompleksitas serangan ini meningkat secara eksponensial dengan panjang kunci. Oleh sebab itu, pemilihan ukuran kunci yang cukup besar dan sistem pengelolaan kunci yang aman sangat penting untuk menjaga integritas dan keamanan data dalam sistem kriptografi modern.
 
 ---
 
