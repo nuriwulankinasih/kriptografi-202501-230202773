@@ -20,7 +20,7 @@ Kelas: 5IKRB
 ---
 
 ## 2. Dasar Teori
-Entropy dalam konteks kriptografi menggambarkan tingkat ketidakpastian atau keacakan dalam sistem kunci. Semakin tinggi nilai entropi, semakin sulit bagi penyerang untuk menebak atau memprediksi kunci yang digunakan dalam proses enkripsi. Entropi biasanya diukur dalam bit; misalnya, sebuah kunci 128-bit dengan entropi penuh memiliki 2<sup>128</sup> kemungkinan kombinasi kunci. Dengan demikian, kunci dengan entropi tinggi dianggap lebih kuat karena memerlukan waktu dan sumber daya komputasi yang jauh lebih besar untuk dipecahkan menggunakan serangan brute force.
+Entropy dalam konteks kriptografi menggambarkan tingkat ketidakpastian atau keacakan dalam sistem kunci. Semakin tinggi nilai entropi, semakin sulit bagi penyerang untuk menebak atau memprediksi kunci yang digunakan dalam proses enkripsi. Entropi biasanya diukur dalam bit. misalnya, sebuah kunci 128-bit dengan entropi penuh memiliki 2<sup>128</sup> kemungkinan kombinasi kunci. Dengan demikian, kunci dengan entropi tinggi dianggap lebih kuat karena memerlukan waktu dan sumber daya komputasi yang jauh lebih besar untuk dipecahkan menggunakan serangan brute force.
 
 Unicity distance merupakan ukuran teoretis yang digunakan untuk menentukan berapa banyak ciphertext yang diperlukan untuk secara unik menentukan kunci yang digunakan. Nilai ini tergantung pada panjang kunci dan redundansi dari plaintext yang dienkripsi. Jika jumlah ciphertext yang tersedia melebihi unicity distance, maka secara teori penyerang dapat menemukan satu-satunya kunci yang benar dengan analisis kriptografi yang tepat. Oleh karena itu, semakin besar unicity distance, semakin sulit pula menemukan kunci melalui analisis statistik.
 
@@ -32,16 +32,16 @@ Dalam evaluasi kekuatan kunci, kombinasi antara entropi tinggi dan unicity dista
 (- Python 3.x  
 - Visual Studio Code / editor lain  
 - Git dan akun GitHub  
-- Library tambahan (misalnya pycryptodome, jika diperlukan)  )
+- Google Chrome
 
 ---
 
 ## 4. Langkah Percobaan
-(Tuliskan langkah yang dilakukan sesuai instruksi.  
-Contoh format:
-1. Membuat file `caesar_cipher.py` di folder `praktikum/week2-cryptosystem/src/`.
-2. Menyalin kode program dari panduan praktikum.
-3. Menjalankan program dengan perintah `python caesar_cipher.py`.)
+1. Membuat file `perhitungan-entropy.py` di folder `praktikum/week4-entropy-unicity/src/`.
+2. Membuat file `menghitung-unicity distance.py` di folder `praktikum/week4-entropy-unicity/src/`.
+3. Membuat file `analisis-brute force.py` di folder `praktikum/week4-entropy-unicity/src/`.
+4. Menyalin kode program dari panduan praktikum.
+5. Menjalankan program dengan perintah `python caesar_cipher.py`.)
 
 ---
 
