@@ -69,7 +69,7 @@ Cipher klasik lain yang lebih kompleks adalah Vigenère Cipher dan Transposisi C
     print("Decrypted :", dec)
 
 
-    Hasilnya:
+Hasilnya:
 
     Plaintext : CLASSIC CIPHER
     Ciphertext: FODVVLF FLSKHU
@@ -113,9 +113,9 @@ Cipher klasik lain yang lebih kompleks adalah Vigenère Cipher dan Transposisi C
     print("Plaintext :", msg)
     print("Ciphertext:", enc)
     print("Decrypted :", dec)
+    
 
-
-    Hasilnya:
+Hasilnya:
 
     Plaintext : KRIPTOGRAFI
     Ciphertext: UVGZXMQVYPM
@@ -156,7 +156,7 @@ Cipher klasik lain yang lebih kompleks adalah Vigenère Cipher dan Transposisi C
     print("Decrypted :", dec)
 
 
-    Hasilnya:
+Hasilnya:
 
     Plaintext : TRANSPOSITIONCIPHER
     Ciphertext: TPIPROOHASNENICRSTI
