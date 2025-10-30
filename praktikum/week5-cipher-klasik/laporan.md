@@ -1,20 +1,27 @@
 # Laporan Praktikum Kriptografi
-Minggu ke-: X  
-Topik: [judul praktikum]  
-Nama: [Nama Mahasiswa]  
-NIM: [NIM Mahasiswa]  
-Kelas: [Kelas]  
+Minggu ke-: 5
+Topik: Cipher Klasik (Caesar, Vigenère, Transposisi)
+
+Nama: Nuri Wulan Kinasih  
+
+NIM: 230202773
+
+Kelas: 5IKRB
 
 ---
 
 ## 1. Tujuan
-(Tuliskan tujuan pembelajaran praktikum sesuai modul.)
+1. Menerapkan algoritma Caesar Cipher untuk enkripsi dan dekripsi teks.
+2. Menerapkan algoritma Vigenère Cipher dengan variasi kunci.
+3. Mengimplementasikan algoritma transposisi sederhana.
+4. Menjelaskan kelemahan algoritma kriptografi klasik.
 
 ---
 
 ## 2. Dasar Teori
-(Ringkas teori relevan (cukup 2–3 paragraf).  
-Contoh: definisi cipher klasik, konsep modular aritmetika, dll.  )
+Cipher klasik merupakan dasar dari perkembangan ilmu kriptografi modern. Jenis cipher ini digunakan pada masa sebelum komputer ditemukan, dengan prinsip utama melakukan substitusi (penggantian huruf) atau transposisi (penukaran posisi huruf) untuk menyembunyikan pesan asli. Meskipun tekniknya sederhana, cipher klasik memiliki peran penting dalam sejarah keamanan informasi karena memperkenalkan konsep enkripsi dan dekripsi yang masih digunakan hingga kini dalam bentuk yang lebih kompleks.
+Salah satu cipher klasik paling terkenal adalah Caesar Cipher, yang digunakan oleh Julius Caesar untuk mengirim pesan rahasia kepada pasukannya. Cipher ini bekerja dengan cara menggeser setiap huruf dalam plaintext sebanyak beberapa posisi di alfabet. Misalnya, jika pergeserannya tiga huruf, maka huruf A menjadi D, B menjadi E, dan seterusnya. Walaupun mudah dipahami dan diterapkan, Caesar Cipher mudah dipecahkan menggunakan analisis frekuensi atau brute force karena jumlah kuncinya yang sangat terbatas.
+Cipher klasik lain yang lebih kompleks adalah Vigenère Cipher dan Transposisi Cipher. Vigenère Cipher merupakan bentuk pengembangan dari Caesar Cipher dengan menggunakan kata kunci untuk menentukan jumlah pergeseran tiap huruf, sehingga hasil enkripsi menjadi lebih sulit diprediksi. Sementara itu, Transposisi Cipher bekerja dengan menukar posisi huruf dalam pesan tanpa mengubah huruf itu sendiri. Teknik ini mengandalkan pola tertentu dalam penukaran posisi huruf, misalnya dengan menulis pesan dalam bentuk tabel dan membaca urutannya secara vertikal atau zig-zag. Meskipun teknik-teknik ini kini tidak lagi aman untuk penggunaan modern, konsep dasarnya tetap menjadi fondasi dalam memahami prinsip kerja algoritma kriptografi masa kini.
 
 ---
 
@@ -22,7 +29,7 @@ Contoh: definisi cipher klasik, konsep modular aritmetika, dll.  )
 (- Python 3.x  
 - Visual Studio Code / editor lain  
 - Git dan akun GitHub  
-- Library tambahan (misalnya pycryptodome, jika diperlukan)  )
+- Google Chrome
 
 ---
 
@@ -36,15 +43,82 @@ Contoh format:
 ---
 
 ## 5. Source Code
-(Salin kode program utama yang dibuat atau dimodifikasi.  
-Gunakan blok kode:
+### Langkah 1 --Implementasi Caesar Cipher
 
-```python
-# contoh potongan kode
-def encrypt(text, key):
-    return ...
-```
-)
+    def caesar_encrypt(plaintext, key):
+        result = ""
+        for char in plaintext:
+            if char.isalpha():
+                shift = 65 if char.isupper() else 97
+                result += chr((ord(char) - shift + key) % 26 + shift)
+            else:
+                result += char
+        return result
+    
+    def caesar_decrypt(ciphertext, key):
+        return caesar_encrypt(ciphertext, -key)
+    
+    # Contoh uji
+    msg = "CLASSIC CIPHER"
+    key = 3
+    enc = caesar_encrypt(msg, key)
+    dec = caesar_decrypt(enc, key)
+    print("Plaintext :", msg)
+    print("Ciphertext:", enc)
+    print("Decrypted :", dec)
+
+    Hasilnya:
+
+    Plaintext : CLASSIC CIPHER
+    Ciphertext: FODVVLF FLSKHU
+    Decrypted : CLASSIC CIPHER
+
+### Langkah 2 --Implementasi Vigenère Cipher
+
+    def vigenere_encrypt(plaintext, key):
+        result = []
+        key = key.lower()
+        key_index = 0
+        for char in plaintext:
+            if char.isalpha():
+                shift = ord(key[key_index % len(key)]) - 97
+                base = 65 if char.isupper() else 97
+                result.append(chr((ord(char) - base + shift) % 26 + base))
+                key_index += 1
+            else:
+                result.append(char)
+        return "".join(result)
+    
+    def vigenere_decrypt(ciphertext, key):
+        result = []
+        key = key.lower()
+        key_index = 0
+        for char in ciphertext:
+            if char.isalpha():
+                shift = ord(key[key_index % len(key)]) - 97
+                base = 65 if char.isupper() else 97
+                result.append(chr((ord(char) - base - shift) % 26 + base))
+                key_index += 1
+            else:
+                result.append(char)
+        return "".join(result)
+    
+    # Contoh uji
+    msg = "KRIPTOGRAFI"
+    key = "KEY"
+    enc = vigenere_encrypt(msg, key)
+    dec = vigenere_decrypt(enc, key)
+    print("Plaintext :", msg)
+    print("Ciphertext:", enc)
+    print("Decrypted :", dec)
+
+    Hasilnya:
+
+    Plaintext : KRIPTOGRAFI
+    Ciphertext: UVGZXMQVYPM
+    Decrypted : KRIPTOGRAFI
+
+    
 
 ---
 
