@@ -194,14 +194,13 @@ Berdasarkan hasil eksekusi program, ketiga algoritma cipher klasik Caesar Cipher
 
 Jawaban:
 
-1. Kelemahan Caesar Cipher adalah jumlah kuncinya yang sangat terbatas, yaitu hanya 25 kemungkinan pergeseran. Hal ini membuatnya mudah dipecahkan menggunakan metode brute force atau dengan analisis frekuensi, karena pola huruf pada ciphertext masih mengikuti pola bahasa aslinya. Selain itu, algoritma ini tidak cukup aman untuk digunakan pada sistem modern karena tidak melibatkan variasi kunci yang kompleks.
+1. Kelemahan Caesar Cipher adalah jumlah kuncinya yang sangat terbatas, yaitu hanya 25 kemungkinan pergeseran. Hal ini membuatnya mudah dipecahkan menggunakan     metode brute force atau dengan analisis frekuensi, karena pola huruf pada ciphertext masih mengikuti pola bahasa aslinya. Selain itu, algoritma ini tidak       cukup aman untuk digunakan pada sistem modern karena tidak melibatkan variasi kunci yang kompleks.
 
+    Kelemahan Vigenère Cipher terletak pada penggunaan kata kunci yang dapat menjadi titik lemah. Jika panjang kata kunci pendek atau berulang, pola enkripsi       dapat terdeteksi dan dianalisis menggunakan metode Kasiski examination atau Friedman test. Meskipun lebih kuat dibanding Caesar Cipher, Vigenère Cipher         tetap rentan terhadap serangan analisis pola jika kunci tidak dijaga kerahasiaannya.
 
-Kelemahan Vigenère Cipher terletak pada penggunaan kata kunci yang dapat menjadi titik lemah. Jika panjang kata kunci pendek atau berulang, pola enkripsi dapat terdeteksi dan dianalisis menggunakan metode Kasiski examination atau Friedman test. Meskipun lebih kuat dibanding Caesar Cipher, Vigenère Cipher tetap rentan terhadap serangan analisis pola jika kunci tidak dijaga kerahasiaannya.
+2. Cipher klasik mudah diserang dengan analisis frekuensi karena setiap huruf dalam ciphertext masih mempertahankan pola kemunculan yang mirip dengan bahasa       aslinya. Misalnya, dalam bahasa Indonesia huruf “A” atau “E” muncul lebih sering dibandingkan huruf lain. Dengan menganalisis frekuensi huruf dalam             ciphertext, penyerang dapat menebak huruf-huruf asli dan memecahkan pesan dengan cukup mudah.
 
-2. Cipher klasik mudah diserang dengan analisis frekuensi karena setiap huruf dalam ciphertext masih mempertahankan pola kemunculan yang mirip dengan bahasa aslinya. Misalnya, dalam bahasa Indonesia huruf “A” atau “E” muncul lebih sering dibandingkan huruf lain. Dengan menganalisis frekuensi huruf dalam ciphertext, penyerang dapat menebak huruf-huruf asli dan memecahkan pesan dengan cukup mudah.
-
-3. Cipher substitusi mengganti setiap huruf dengan huruf lain berdasarkan aturan tertentu, sedangkan cipher transposisi hanya menukar posisi huruf tanpa mengganti karakter itu sendiri. Kelebihan cipher substitusi adalah sederhana dan cepat diterapkan, tetapi mudah diretas melalui analisis frekuensi. Sementara itu, cipher transposisi lebih sulit dipecahkan dengan analisis frekuensi karena huruf tidak berubah, namun tetap dapat diserang jika pola penukarannya terdeteksi.
+3. Cipher substitusi mengganti setiap huruf dengan huruf lain berdasarkan aturan tertentu, sedangkan cipher transposisi hanya menukar posisi huruf tanpa           mengganti karakter itu sendiri. Kelebihan cipher substitusi adalah sederhana dan cepat diterapkan, tetapi mudah diretas melalui analisis frekuensi.             Sementara itu, cipher transposisi lebih sulit dipecahkan dengan analisis frekuensi karena huruf tidak berubah, namun tetap dapat diserang jika pola             penukarannya terdeteksi.
 
 ---
 
@@ -219,12 +218,12 @@ Contoh:
 ---
 
 ## 10. Commit Log
-(Tuliskan bukti commit Git yang relevan.  
-Contoh:
 ```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
+commit week5-cipher-klasik
+Author: Nuri Wulan Kinasih <kinasihnuri60@gmail.com>
 
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
+Date:   2025-10-25
+
+    week5-cipher-klasik: Cipher Klasik (Caesar, Vigenère, Transposisi)
+
 ```
