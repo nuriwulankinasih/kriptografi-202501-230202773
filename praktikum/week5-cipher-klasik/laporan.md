@@ -222,7 +222,7 @@ Contoh:
 commit week5-cipher-klasik
 Author: Nuri Wulan Kinasih <kinasihnuri60@gmail.com>
 
-Date:   2025-10-25
+Date:   2025-10-30
 
     week5-cipher-klasik: Cipher Klasik (Caesar, Vigenère, Transposisi)
 
