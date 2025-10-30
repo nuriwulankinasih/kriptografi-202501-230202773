@@ -181,7 +181,8 @@ Hasil eksekusi program Implementasi Transposisi Sederhana:
 
 
 Pembahasan:
-Berdasarkan hasil eksekusi program, ketiga algoritma cipher klasik — Caesar Cipher, Vigenère Cipher, dan Transposisi Sederhana — berhasil melakukan proses enkripsi dan dekripsi dengan benar. Caesar Cipher menggeser huruf berdasarkan nilai kunci tertentu, Vigenère Cipher menggunakan kata kunci untuk menghasilkan pola enkripsi yang lebih kompleks, sedangkan Transposisi Cipher mengacak urutan huruf tanpa mengubah karakter aslinya. Hasil yang diperoleh menunjukkan bahwa algoritma dapat mengubah teks asli menjadi ciphertext dan mengembalikannya lagi ke bentuk semula, menandakan implementasi program berjalan sesuai dengan teori kriptografi klasik.
+
+Berdasarkan hasil eksekusi program, ketiga algoritma cipher klasik Caesar Cipher, Vigenère Cipher, dan Transposisi Sederhana berhasil melakukan proses enkripsi dan dekripsi dengan benar. Caesar Cipher menggeser huruf berdasarkan nilai kunci tertentu, Vigenère Cipher menggunakan kata kunci untuk menghasilkan pola enkripsi yang lebih kompleks, sedangkan Transposisi Cipher mengacak urutan huruf tanpa mengubah karakter aslinya. Hasil yang diperoleh menunjukkan bahwa algoritma dapat mengubah teks asli menjadi ciphertext dan mengembalikannya lagi ke bentuk semula, menandakan implementasi program berjalan sesuai dengan teori kriptografi klasik.
 
 
 ---
