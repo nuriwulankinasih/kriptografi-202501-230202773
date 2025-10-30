@@ -20,7 +20,9 @@ Kelas: 5IKRB
 
 ## 2. Dasar Teori
 Cipher klasik merupakan dasar dari perkembangan ilmu kriptografi modern. Jenis cipher ini digunakan pada masa sebelum komputer ditemukan, dengan prinsip utama melakukan substitusi (penggantian huruf) atau transposisi (penukaran posisi huruf) untuk menyembunyikan pesan asli. Meskipun tekniknya sederhana, cipher klasik memiliki peran penting dalam sejarah keamanan informasi karena memperkenalkan konsep enkripsi dan dekripsi yang masih digunakan hingga kini dalam bentuk yang lebih kompleks.
+
 Salah satu cipher klasik paling terkenal adalah Caesar Cipher, yang digunakan oleh Julius Caesar untuk mengirim pesan rahasia kepada pasukannya. Cipher ini bekerja dengan cara menggeser setiap huruf dalam plaintext sebanyak beberapa posisi di alfabet. Misalnya, jika pergeserannya tiga huruf, maka huruf A menjadi D, B menjadi E, dan seterusnya. Walaupun mudah dipahami dan diterapkan, Caesar Cipher mudah dipecahkan menggunakan analisis frekuensi atau brute force karena jumlah kuncinya yang sangat terbatas.
+
 Cipher klasik lain yang lebih kompleks adalah Vigenère Cipher dan Transposisi Cipher. Vigenère Cipher merupakan bentuk pengembangan dari Caesar Cipher dengan menggunakan kata kunci untuk menentukan jumlah pergeseran tiap huruf, sehingga hasil enkripsi menjadi lebih sulit diprediksi. Sementara itu, Transposisi Cipher bekerja dengan menukar posisi huruf dalam pesan tanpa mengubah huruf itu sendiri. Teknik ini mengandalkan pola tertentu dalam penukaran posisi huruf, misalnya dengan menulis pesan dalam bentuk tabel dan membaca urutannya secara vertikal atau zig-zag. Meskipun teknik-teknik ini kini tidak lagi aman untuk penggunaan modern, konsep dasarnya tetap menjadi fondasi dalam memahami prinsip kerja algoritma kriptografi masa kini.
 
 ---
@@ -34,11 +36,10 @@ Cipher klasik lain yang lebih kompleks adalah Vigenère Cipher dan Transposisi C
 ---
 
 ## 4. Langkah Percobaan
-(Tuliskan langkah yang dilakukan sesuai instruksi.  
-Contoh format:
-1. Membuat file `caesar_cipher.py` di folder `praktikum/week2-cryptosystem/src/`.
-2. Menyalin kode program dari panduan praktikum.
-3. Menjalankan program dengan perintah `python caesar_cipher.py`.)
+1. Membuat file `implementasi-caesar cipher.py` di folder `praktikum/week5-cipher-klasik/src/`.
+2. Membuat file `implementasi-vignere cipher.py` di folder `praktikum/week5-cipher-klasik/src/`.
+3. Membuat file `implementasi-transposisi sederhana.py` di folder `praktikum/week5-cipher-klasik/src/`.
+4. Menjalankan program dengan perintah sesuai pada file
 
 ---
 
@@ -66,6 +67,7 @@ Contoh format:
     print("Plaintext :", msg)
     print("Ciphertext:", enc)
     print("Decrypted :", dec)
+
 
     Hasilnya:
 
@@ -112,40 +114,98 @@ Contoh format:
     print("Ciphertext:", enc)
     print("Decrypted :", dec)
 
+
     Hasilnya:
 
     Plaintext : KRIPTOGRAFI
     Ciphertext: UVGZXMQVYPM
     Decrypted : KRIPTOGRAFI
 
+### Langkah 3 -- Implementasi Transposisi Sederhana
+
+    def transpose_encrypt(plaintext, key=5):
+        ciphertext = [''] * key
+        for col in range(key):
+            pointer = col
+            while pointer < len(plaintext):
+                ciphertext[col] += plaintext[pointer]
+                pointer += key
+        return ''.join(ciphertext)
+    
+    def transpose_decrypt(ciphertext, key=5):
+        num_of_cols = int(len(ciphertext) / key + 0.9999)
+        num_of_rows = key
+        num_of_shaded_boxes = (num_of_cols * num_of_rows) - len(ciphertext)
+        plaintext = [''] * num_of_cols
+        col = 0
+        row = 0
+        for symbol in ciphertext:
+            plaintext[col] += symbol
+            col += 1
+            if (col == num_of_cols) or (col == num_of_cols - 1 and row >= num_of_rows - num_of_shaded_boxes):
+                col = 0
+                row += 1
+        return ''.join(plaintext)
+    
+    # Contoh uji
+    msg = "TRANSPOSITIONCIPHER"
+    enc = transpose_encrypt(msg, key=5)
+    dec = transpose_decrypt(enc, key=5)
+    print("Plaintext :", msg)
+    print("Ciphertext:", enc)
+    print("Decrypted :", dec)
+
+
+    Hasilnya:
+
+    Plaintext : TRANSPOSITIONCIPHER
+    Ciphertext: TPIPROOHASNENICRSTI
+    Decrypted : TRANSPOSITIONCIPHER
     
 
 ---
 
 ## 6. Hasil dan Pembahasan
-(- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
-- Berikan tabel atau ringkasan hasil uji jika diperlukan.  
-- Jelaskan apakah hasil sesuai ekspektasi.  
-- Bahas error (jika ada) dan solusinya. 
 
-Hasil eksekusi program Caesar Cipher:
+Hasil eksekusi program Implementasi Caesar Cipher:
 
-![Hasil Eksekusi](screenshots/output.png)
-![Hasil Input](screenshots/input.png)
-![Hasil Output](screenshots/output.png)
-)
+<img width="1366" height="768" alt="langkah1-implementasi caesar cipher" src="https://github.com/user-attachments/assets/accd5a56-f0ca-4d09-a19f-5822394bc565" />
+
+Hasil eksekusi program Implementasi Vignere Cipher:
+
+<img width="1366" height="768" alt="Langkah2-implementasi vignere cipher" src="https://github.com/user-attachments/assets/8d97604c-a7d4-4ce0-b5ce-16a84dc468d0" />
+
+Hasil eksekusi program Implementasi Transposisi Sederhana:
+
+<img width="1366" height="768" alt="Langkah3-implementasi transposisi sederhana" src="https://github.com/user-attachments/assets/1cd08a9a-671a-43f4-b857-2734c945fa4f" />
+
+
+Pembahasan:
+Berdasarkan hasil eksekusi program, ketiga algoritma cipher klasik — Caesar Cipher, Vigenère Cipher, dan Transposisi Sederhana — berhasil melakukan proses enkripsi dan dekripsi dengan benar. Caesar Cipher menggeser huruf berdasarkan nilai kunci tertentu, Vigenère Cipher menggunakan kata kunci untuk menghasilkan pola enkripsi yang lebih kompleks, sedangkan Transposisi Cipher mengacak urutan huruf tanpa mengubah karakter aslinya. Hasil yang diperoleh menunjukkan bahwa algoritma dapat mengubah teks asli menjadi ciphertext dan mengembalikannya lagi ke bentuk semula, menandakan implementasi program berjalan sesuai dengan teori kriptografi klasik.
+
 
 ---
 
 ## 7. Jawaban Pertanyaan
-(Jawab pertanyaan diskusi yang diberikan pada modul.  
-- Pertanyaan 1: …  
-- Pertanyaan 2: …  
-)
+1. Apa kelemahan utama algoritma Caesar Cipher dan Vigenère Cipher?
+2. Mengapa cipher klasik mudah diserang dengan analisis frekuensi?
+3. Bandingkan kelebihan dan kelemahan cipher substitusi vs transposisi.
+
+Jawaban:
+
+1. Kelemahan Caesar Cipher adalah jumlah kuncinya yang sangat terbatas, yaitu hanya 25 kemungkinan pergeseran. Hal ini membuatnya mudah dipecahkan menggunakan metode brute force atau dengan analisis frekuensi, karena pola huruf pada ciphertext masih mengikuti pola bahasa aslinya. Selain itu, algoritma ini tidak cukup aman untuk digunakan pada sistem modern karena tidak melibatkan variasi kunci yang kompleks.
+
+
+Kelemahan Vigenère Cipher terletak pada penggunaan kata kunci yang dapat menjadi titik lemah. Jika panjang kata kunci pendek atau berulang, pola enkripsi dapat terdeteksi dan dianalisis menggunakan metode Kasiski examination atau Friedman test. Meskipun lebih kuat dibanding Caesar Cipher, Vigenère Cipher tetap rentan terhadap serangan analisis pola jika kunci tidak dijaga kerahasiaannya.
+
+2. Cipher klasik mudah diserang dengan analisis frekuensi karena setiap huruf dalam ciphertext masih mempertahankan pola kemunculan yang mirip dengan bahasa aslinya. Misalnya, dalam bahasa Indonesia huruf “A” atau “E” muncul lebih sering dibandingkan huruf lain. Dengan menganalisis frekuensi huruf dalam ciphertext, penyerang dapat menebak huruf-huruf asli dan memecahkan pesan dengan cukup mudah.
+
+3. Cipher substitusi mengganti setiap huruf dengan huruf lain berdasarkan aturan tertentu, sedangkan cipher transposisi hanya menukar posisi huruf tanpa mengganti karakter itu sendiri. Kelebihan cipher substitusi adalah sederhana dan cepat diterapkan, tetapi mudah diretas melalui analisis frekuensi. Sementara itu, cipher transposisi lebih sulit dipecahkan dengan analisis frekuensi karena huruf tidak berubah, namun tetap dapat diserang jika pola penukarannya terdeteksi.
+
 ---
 
 ## 8. Kesimpulan
-(Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
+Berdasarkan percobaan yang telah dilakukan, dapat disimpulkan bahwa algoritma cipher klasik seperti Caesar Cipher, Vigenère Cipher, dan Transposisi Sederhana berhasil diimplementasikan dengan baik untuk melakukan proses enkripsi dan dekripsi teks. Ketiganya menunjukkan prinsip dasar kriptografi, yaitu mengubah pesan asli menjadi bentuk yang sulit dibaca tanpa kunci. Namun, meskipun efektif untuk memahami konsep dasar enkripsi, cipher klasik masih memiliki kelemahan keamanan dan tidak cocok digunakan dalam sistem modern karena mudah dipecahkan melalui analisis pola dan frekuensi huruf.
 
 ---
 
