@@ -126,10 +126,18 @@ Hasil eksekusi program Caesar Cipher:
 ---
 
 ## 7. Jawaban Pertanyaan
-(Jawab pertanyaan diskusi yang diberikan pada modul.  
-- Pertanyaan 1: …  
-- Pertanyaan 2: …  
-)
+1. Apa perbedaan mendasar antara DES, AES, dan RSA dalam hal kunci dan keamanan?
+2. Mengapa AES lebih banyak digunakan dibanding DES di era modern?
+3. Mengapa RSA dikategorikan sebagai algoritma asimetris, dan bagaimana proses pembangkitan kuncinya?
+
+Jawaban: 
+
+1. Perbedaan mendasar antara DES, AES, dan RSA terletak pada jenis kunci dan tingkat keamanannya. DES dan AES sama-sama menggunakan kunci simetris (kunci enkripsi dan dekripsi sama), sedangkan RSA menggunakan kunci asimetris (kunci publik dan privat berbeda). DES memiliki panjang kunci 56 bit sehingga mudah ditembus, sementara AES lebih kuat dengan kunci 128–256 bit. RSA lebih aman untuk pertukaran kunci karena berbasis faktorisasi bilangan prima besar.
+
+2. AES lebih banyak digunakan dibanding DES karena lebih aman dan efisien. DES kini dianggap lemah akibat panjang kunci yang pendek, sedangkan AES memiliki struktur dan panjang kunci yang lebih kompleks, menjadikannya tahan terhadap serangan brute force. Selain itu, AES juga lebih cepat diproses di perangkat modern, baik software maupun hardware.
+
+3. RSA disebut algoritma asimetris karena menggunakan dua kunci berbeda: publik untuk enkripsi dan privat untuk dekripsi. Kuncinya dibangkitkan dengan memilih dua bilangan prima besar (p dan q), menghitung n = p × q, lalu menentukan nilai e dan d yang saling terkait secara matematis. Keamanannya bergantung pada sulitnya memfaktorkan n menjadi p dan q.
+
 ---
 
 ## 8. Kesimpulan
