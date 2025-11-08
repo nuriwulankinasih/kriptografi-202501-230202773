@@ -1,7 +1,9 @@
 # Laporan Praktikum Kriptografi
 Minggu ke-: 6  
 Topik: Cipher Modern (DES, AES, RSA)
+
 Nama: Nuri Wulan Kinasih 
+
 NIM: 230202773  
 Kelas: 5IKRB  
 
@@ -154,12 +156,9 @@ Contoh:
 ---
 
 ## 10. Commit Log
-(Tuliskan bukti commit Git yang relevan.  
-Contoh:
-```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
+commit week6-cipher-modern
+Author: Nuri Wulan Kinasih <kinasihnuri60@gmail.com>
+Date:   2025-11-08
 
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
+    week6-cipher-modern: Cipher Modern (DES, AES, RSA)
 ```
