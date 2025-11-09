@@ -163,7 +163,9 @@ Contoh:
 ---
 
 ## 10. Commit Log
+```
 commit week6-cipher-modern
+
 Author: Nuri Wulan Kinasih <kinasihnuri60@gmail.com>
 
 Date:   2025-10-30
