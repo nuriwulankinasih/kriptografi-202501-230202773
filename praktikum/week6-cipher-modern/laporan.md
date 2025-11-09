@@ -35,11 +35,11 @@ Advanced Encryption Standard (AES) dan Rivest–Shamir–Adleman (RSA) merupakan
 ---
 
 ## 4. Langkah Percobaan
-(Tuliskan langkah yang dilakukan sesuai instruksi.  
-Contoh format:
-1. Membuat file `caesar_cipher.py` di folder `praktikum/week2-cryptosystem/src/`.
-2. Menyalin kode program dari panduan praktikum.
-3. Menjalankan program dengan perintah `python caesar_cipher.py`.)
+1. Membuat file `implementasi-DES.py` di folder `praktikum/week6-cipher-modern/src/`.
+2. Membuat file `implementasi-AES128.py` di folder `praktikum/week6-cipher-modern/src/`.
+3. Membuat file `implementasi-RSA.py` di folder `praktikum/week6-cipher-modern/src/`.
+4. Menyalin kode program dari panduan praktikum.
+5. Menjalankan program dengan perintah yg sesuai pada file
 
 ---
 
@@ -61,7 +61,8 @@ Contoh format:
     print("Decrypted:", decrypted)
 
 Hasilnya: 
-
+    Ciphertext: b'\xe3}\xf2\x97+\x13\x07%'
+    Decrypted: b'ABCDEFGH'
 
 
 ### Langkah 2 — Implementasi AES-128
@@ -83,7 +84,8 @@ Hasilnya:
     print("Decrypted:", decrypted.decode())
 
 Hasilnya: 
-
+    Ciphertext: b'4\xd8\tZ\xe8\xa2\xdfbr\xea\xc7\x97\x94Bs\xd4t\x11\xbb\x06\xdc4X\x7f\x9a'
+    Decrypted: Modern Cipher AES Example
 
 ### Langkah 3 — Implementasi RSA
 
@@ -107,22 +109,25 @@ Hasilnya:
     print("Decrypted:", decrypted.decode())
 
 Hasilnya: 
-
-
+    Ciphertext: b'W\xae\xd9Sa\xae\xe3f\xd1\xcc\xab\x1a\xf4D\xbckx\x8a\x14\xc0\x16K\xdb\x92\x0e\xd7y\xdb\x08\xc6\xfaa~?\x17!KAb\xa6\xb7\xe2\xae\xb4\xd4#}\xe2ic\xa7\x155W\xe1hP+B\xeb\x80"\xc9S\xe7\xe6>\xc54\x10\x83Y\x8f\xe67\r+\xeb\xf2\x88\x8d\xa4\x8cNY\xaf_\xd5\x04`}M\xc6\x9a\x8fV!ts5\xeaM\xb24\x87\xf8\xd8Rs\xf0\x12#\xac\x82\xd6\xb8m\xb2\xb7\x00\xbb\xf0\xa7\xb2\xdf6E\xf9\x19\x10\x92\xcc\xdb\x129\x99v\x8c\x9f\xd1\x05\x08\xe38\xfd\x8f\xe8FJ\xaa\x9a\x1e\xee\xc9\\\xc4/\xb1s\xf2\xf2\x1e\xffm\xfe\xe3Bfy\x94j\xd9\xad&Pi\xda]\x07U)\x8cF\xf9\x17\xad`\xd2\xa9\x1f-bH\xa82\xdd\x87\xb9\xa5\x91zm\xac\x02\xbd\xb9\x8d\x0cB\xd4\x93\xd2\x8a\xee\x9aC\xaf\xf0#\'\x0b\xf2\xf2\xd47*\xfb\xcbDS~\xfc\xe2\x12\xed\xdc\xce|VI[H\xf0k\xa3\xb7\xbc<\xd0\xce\xa6h\xcaO\xb8\x1a'
+    Decrypted: RSA Example
+    
 ---
 
 ## 6. Hasil dan Pembahasan
-(- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
-- Berikan tabel atau ringkasan hasil uji jika diperlukan.  
-- Jelaskan apakah hasil sesuai ekspektasi.  
-- Bahas error (jika ada) dan solusinya. 
+Hasil eksekusi program Implementasi DES:
+<img width="1366" height="768" alt="Langkah1-Implementasi DES" src="https://github.com/user-attachments/assets/531cba41-25b3-4dd3-8441-6f3fe1cc9801" />
 
-Hasil eksekusi program Caesar Cipher:
+Hasil eksekusi program Implementasi AES-128:
+<img width="1366" height="768" alt="Langkah2-Implementasi AES128" src="https://github.com/user-attachments/assets/ea5088bf-7e49-4c72-93fe-53e9861eea86" />
 
-![Hasil Eksekusi](screenshots/output.png)
-![Hasil Input](screenshots/input.png)
-![Hasil Output](screenshots/output.png)
-)
+Hasil eksekusi program Implementasi RSA:
+<img width="1366" height="768" alt="Langkah3-Implementasi RSA" src="https://github.com/user-attachments/assets/bf95586b-f17d-40b9-98cd-9e75a1039412" />
+
+Pembahasan: Hasil eksekusi menunjukkan bahwa ketiga algoritma bekerja sesuai konsepnya.
+- DES berhasil mengenkripsi dan mendekripsi teks dengan benar, namun keamanannya lemah karena panjang kuncinya pendek.
+- AES menghasilkan ciphertext acak dan mampu mengembalikan plaintext dengan tepat, menunjukkan keamanan dan efisiensi yang tinggi.
+- RSA juga berjalan baik, menggunakan kunci publik untuk enkripsi dan kunci privat untuk dekripsi, membuktikan konsep asimetrisnya.
 
 ---
 
@@ -142,7 +147,7 @@ Jawaban:
 ---
 
 ## 8. Kesimpulan
-(Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
+Dari percobaan yang telah dilakukan, dapat disimpulkan bahwa ketiga algoritma cipher modern (DES, AES, dan RSA) berhasil diimplementasikan dengan baik untuk proses enkripsi dan dekripsi data. DES menggunakan kunci simetris 56 bit dan bekerja pada blok 64 bit, namun keamanannya kini sudah lemah terhadap brute force. AES merupakan pengganti DES yang lebih kuat dan efisien karena mendukung panjang kunci hingga 256 bit serta memiliki kecepatan tinggi dalam proses enkripsi. Sementara itu, RSA menggunakan sistem kunci asimetris yang lebih aman untuk pertukaran kunci dan autentikasi data. Secara keseluruhan, AES dan RSA menjadi standar utama dalam sistem keamanan modern karena kombinasi kekuatan, efisiensi, dan fleksibilitasnya dalam berbagai aplikasi digital.
 
 ---
 
