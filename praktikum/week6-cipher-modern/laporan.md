@@ -27,8 +27,8 @@ Advanced Encryption Standard (AES) dan Rivest–Shamir–Adleman (RSA) merupakan
 ---
 
 ## 3. Alat dan Bahan
-(- Python 3.x  
-- Visual Studio Code / editor lain  
+(- Python 3.14.0 
+- Visual Studio Code
 - Git dan akun GitHub  
 - Google Chrome
 
