@@ -1,28 +1,35 @@
 # Laporan Praktikum Kriptografi
-Minggu ke-: X  
-Topik: [judul praktikum]  
-Nama: [Nama Mahasiswa]  
-NIM: [NIM Mahasiswa]  
-Kelas: [Kelas]  
+Minggu ke-: 7
+Topik: Diffie-Hellman Key Exchange
+
+Nama: Nuri Wulan Kinasih
+NIM: 230202773  
+Kelas: 5IKRB  
 
 ---
 
 ## 1. Tujuan
-(Tuliskan tujuan pembelajaran praktikum sesuai modul.)
+1. Melakukan simulasi protokol Diffie-Hellman untuk pertukaran kunci publik.
+2. Menjelaskan mekanisme pertukaran kunci rahasia menggunakan bilangan prima dan logaritma diskrit.
+3. Menganalisis potensi serangan pada protokol Diffie-Hellman (termasuk serangan Man-in-the-Middle / MITM).
 
 ---
 
 ## 2. Dasar Teori
-(Ringkas teori relevan (cukup 2–3 paragraf).  
-Contoh: definisi cipher klasik, konsep modular aritmetika, dll.  )
+
+Diffie-Hellman Key Exchange merupakan salah satu algoritma kriptografi yang digunakan untuk melakukan pertukaran kunci secara aman melalui saluran komunikasi yang tidak aman. Algoritma ini diperkenalkan oleh Whitfield Diffie dan Martin Hellman pada tahun 1976 sebagai solusi untuk masalah distribusi kunci dalam sistem kriptografi simetris. Prinsip utamanya adalah memungkinkan dua pihak yang belum pernah bertemu sebelumnya untuk menghasilkan kunci rahasia bersama, tanpa harus mengirimkan kunci tersebut secara langsung melalui jaringan.
+
+Dalam mekanisme Diffie-Hellman, kedua pihak menyepakati dua parameter publik yaitu bilangan prima besar (p) dan generator (g). Masing-masing pihak kemudian memilih kunci privat secara acak dan menghitung kunci publik dengan rumus tertentu menggunakan operasi perpangkatan dan modulo terhadap bilangan prima tersebut. Setelah saling bertukar kunci publik, masing-masing pihak dapat menghitung kunci rahasia yang sama dengan memanfaatkan kunci publik lawan dan kunci privat miliknya, tanpa mengungkapkan kunci privat kepada siapa pun.
+
+Keamanan algoritma Diffie-Hellman bergantung pada kesulitan perhitungan discrete logarithm problem, yaitu mencari nilai eksponen dari hasil perpangkatan dalam modulo bilangan prima besar. Semakin besar nilai bilangan prima yang digunakan, semakin sulit bagi pihak ketiga untuk menebak atau menghitung kunci rahasia bersama. Oleh karena itu, meskipun algoritma ini tidak menyediakan autentikasi secara langsung, Diffie-Hellman tetap menjadi fondasi penting dalam banyak protokol keamanan modern seperti TLS, SSH, dan IPsec.
 
 ---
 
 ## 3. Alat dan Bahan
-(- Python 3.x  
-- Visual Studio Code / editor lain  
+(- Python 3.14.0
+- Visual Studio Code 
 - Git dan akun GitHub  
-- Library tambahan (misalnya pycryptodome, jika diperlukan)  )
+- Google Chrome
 
 ---
 
@@ -36,30 +43,41 @@ Contoh format:
 ---
 
 ## 5. Source Code
-(Salin kode program utama yang dibuat atau dimodifikasi.  
-Gunakan blok kode:
+### Langkah 1 — Simulasi Diffie-Hellman
 
-```python
-# contoh potongan kode
-def encrypt(text, key):
-    return ...
-```
-)
+    import random
 
+    # parameter umum (disepakati publik)
+    p = 23  # bilangan prima
+    g = 5   # generator
+    
+    # private key masing-masing pihak
+    a = random.randint(1, p-1)  # secret Alice
+    b = random.randint(1, p-1)  # secret Bob
+    
+    # public key
+    A = pow(g, a, p)
+    B = pow(g, b, p)
+    
+    # exchange public key
+    shared_secret_A = pow(B, a, p)
+    shared_secret_B = pow(A, b, p)
+    
+    print("Kunci bersama Alice :", shared_secret_A)
+    print("Kunci bersama Bob   :", shared_secret_B)
+
+Hasilnya: 
+
+    Kunci bersama Alice : 10
+    Kunci bersama Bob   : 10
+    
 ---
 
 ## 6. Hasil dan Pembahasan
-(- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
-- Berikan tabel atau ringkasan hasil uji jika diperlukan.  
-- Jelaskan apakah hasil sesuai ekspektasi.  
-- Bahas error (jika ada) dan solusinya. 
+Hasil eksekusi program simulasi diffie hellman:
+<img width="1366" height="768" alt="Langkah1-simulasi diffie helman" src="https://github.com/user-attachments/assets/9318ca13-7691-4679-8d26-dfbd4fa9ffd7" />
 
-Hasil eksekusi program Caesar Cipher:
 
-![Hasil Eksekusi](screenshots/output.png)
-![Hasil Input](screenshots/input.png)
-![Hasil Output](screenshots/output.png)
-)
 
 ---
 
