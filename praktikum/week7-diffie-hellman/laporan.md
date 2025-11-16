@@ -125,6 +125,21 @@ Hasilnya:
 
 Penjelasan simulasi:
 
+1. Simulasi Diffie-Hellman (Langkah 1)
+   
+- Alice dan Bob memilih bilangan publik p=23 dan g=5.
+- Keduanya membuat private key acak lalu menghitung public key masing-masing.
+- Setelah bertukar public key, mereka menghitung shared secret dengan rumus modular eksponensial.
+- Hasil akhirnya kunci Alice dan Bob sama (10) → protokol bekerja dengan benar.
+  
+2. Simulasi Serangan MITM (Langkah 2)
+  
+- Eve membuat private key sendiri lalu mencegat dan mengganti public key yang dikirim Alice dan Bob.
+- Alice menghitung kunci dengan Eve, Bob juga menghitung kunci dengan Eve (bukan satu sama lain).
+  Hasil:
+  Kunci Alice–Eve = 4
+  Kunci Bob–Eve = 2
+  Ini menunjukkan bahwa Eve berhasil membuat dua kunci berbeda untuk memantau dan memodifikasi komunikasi.
 
 ---
 
@@ -142,32 +157,37 @@ Pada simulasi Diffie-Hellman, Alice dan Bob berhasil menghasilkan shared key yan
 ---
 
 ## 7. Jawaban Pertanyaan
-(Jawab pertanyaan diskusi yang diberikan pada modul.  
-- Pertanyaan 1: …  
-- Pertanyaan 2: …  
-)
+1. Mengapa Diffie-Hellman memungkinkan pertukaran kunci di saluran publik?
+2. Apa kelemahan utama protokol Diffie-Hellman murni?
+3. Bagaimana cara mencegah serangan MITM pada protokol ini?
+
+Jawaban: 
+
+1. Karena keamanan Diffie-Hellman bergantung pada masalah logaritma diskrit, yaitu perhitungan yang sangat sulit dipecahkan. Meskipun nilai publik (p, g, dan public key) dapat dilihat semua orang, tidak ada yang dapat menghitung kunci rahasia tanpa mengetahui private key.
+   
+2. Kelemahan utamanya adalah tidak ada autentikasi, sehingga protokol ini rentan terhadap Man-in-the-Middle (MITM). Penyerang dapat memalsukan public key dan membuat dua kunci terpisah dengan masing-masing pihak tanpa terdeteksi.
+   
+3. Dengan menambahkan mekanisme autentikasi, seperti:
+   - Menggunakan sertifikat digital (TSL/SSL).
+   - Tanda tangan digital (RSA).
+   - Menggabungkan Diffie-Hellman dengan autentikasi berbasis password.
+     
 ---
 
+
 ## 8. Kesimpulan
-(Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
+Percobaan menunjukkan bahwa protokol Diffie-Hellman mampu menghasilkan kunci rahasia bersama secara aman meskipun pertukaran dilakukan melalui saluran publik. Namun, hasil simulasi MITM membuktikan bahwa tanpa mekanisme autentikasi, pertukaran kunci dapat disusupi dan dimanipulasi oleh pihak ketiga. Oleh karena itu, Diffie-Hellman perlu dikombinasikan dengan autentikasi agar komunikasi tetap aman dari serangan aktif.
 
 ---
 
 ## 9. Daftar Pustaka
-(Cantumkan referensi yang digunakan.  
-Contoh:  
-- Katz, J., & Lindell, Y. *Introduction to Modern Cryptography*.  
-- Stallings, W. *Cryptography and Network Security*.  )
-
----
 
 ## 10. Commit Log
-(Tuliskan bukti commit Git yang relevan.  
-Contoh:
 ```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
+commit week7-diffie-hellman
+Author: Nuri Wulan Kinasih <kinasihnuri60@gmail.com>
+Date:   2025-11-16
 
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
+   week7-diffie-hellman: Diffie-Hellman Key Exchange
+
 ```
