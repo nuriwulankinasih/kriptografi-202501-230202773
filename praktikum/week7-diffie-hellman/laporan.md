@@ -1,4 +1,4 @@
-# Laporan Praktikum Kriptografi
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/6a21c7de-4224-4222-90cc-65c9b5939b76" /># Laporan Praktikum Kriptografi
 Minggu ke-: 7
 Topik: Diffie-Hellman Key Exchange
 
@@ -70,14 +70,74 @@ Hasilnya:
 
     Kunci bersama Alice : 10
     Kunci bersama Bob   : 10
+
+### Langkah 2 -- Analisis Serangan MITM (Man-in-the-Middle)
+
+    import random
+
+    # parameter publik
+    p = 23
+    g = 5
     
+    # private key Alice dan Bob
+    a = random.randint(1, p-1)
+    b = random.randint(1, p-1)
+    
+    # ---- Eve melakukan MITM ----
+    # Eve membuat private key sendiri
+    e = random.randint(1, p-1)
+    
+    # Alice menghitung public key
+    A = pow(g, a, p)
+    
+    # Bob menghitung public key
+    B = pow(g, b, p)
+    
+    # Eve mencegat dan mengganti public key:
+    # Alice menerima B_palsu, Bob menerima A_palsu
+    A_fake = pow(g, e, p)   # public key Eve untuk Bob
+    B_fake = pow(g, e, p)   # public key Eve untuk Alice
+    
+    # Alice menghitung shared secret (dengan kunci Eve)
+    shared_A = pow(B_fake, a, p)
+    
+    # Bob menghitung shared secret (dengan kunci Eve)
+    shared_B = pow(A_fake, b, p)
+    
+    # Eve menghitung dua kunci:
+    # kunci dengan Alice
+    shared_EA = pow(A, e, p)
+    # kunci dengan Bob
+    shared_EB = pow(B, e, p)
+    
+    print("=== Kunci yang Dihasilkan ===")
+    print("Kunci bersama Alice (Alice–Eve):", shared_A)
+    print("Kunci bersama Bob   (Bob–Eve): ", shared_B)
+    print("Kunci Eve dengan Alice        :", shared_EA)
+    print("Kunci Eve dengan Bob          :", shared_EB)
+
+Hasilnya:
+
+    Kunci bersama Alice (Alice–Eve): 4
+    Kunci bersama Bob   (Bob–Eve):  2
+    Kunci Eve dengan Alice        : 4
+    Kunci Eve dengan Bob          : 2
+
+Penjelasan simulasi:
+
+
 ---
 
 ## 6. Hasil dan Pembahasan
 Hasil eksekusi program simulasi diffie hellman:
 <img width="1366" height="768" alt="Langkah1-simulasi diffie helman" src="https://github.com/user-attachments/assets/9318ca13-7691-4679-8d26-dfbd4fa9ffd7" />
 
+Hasil Analisis Serangan MITM (Man-in-the-Middle): 
+<img width="1366" height="768" alt="Langkah2-Analisis serangan MITM" src="https://github.com/user-attachments/assets/8dbb89b5-c290-462c-8815-b2e4b89f7d0c" />
 
+Pembahasan: 
+
+Pada simulasi Diffie-Hellman, Alice dan Bob berhasil menghasilkan shared key yang sama hanya dengan bertukar public key, menunjukkan bahwa proses pertukaran kunci bekerja dengan benar. Namun, pada analisis serangan MITM terlihat bahwa tanpa autentikasi, penyerang dapat memotong dan memalsukan pertukaran kunci, sehingga setiap pihak sebenarnya berbagi kunci dengan penyerang, bukan satu sama lain. Ini menunjukkan bahwa Diffie-Hellman aman secara matematis, tetapi rentan MITM jika tidak disertai autentikasi.
 
 ---
 
