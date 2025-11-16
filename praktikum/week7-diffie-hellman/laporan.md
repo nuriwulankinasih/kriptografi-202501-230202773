@@ -1,4 +1,4 @@
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/6a21c7de-4224-4222-90cc-65c9b5939b76" /># Laporan Praktikum Kriptografi
+# Laporan Praktikum Kriptografi
 Minggu ke-: 7
 Topik: Diffie-Hellman Key Exchange
 
