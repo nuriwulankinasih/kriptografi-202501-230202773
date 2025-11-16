@@ -26,7 +26,7 @@ Keamanan algoritma Diffie-Hellman bergantung pada kesulitan perhitungan discrete
 ---
 
 ## 3. Alat dan Bahan
-(- Python 3.14.0
+- Python 3.14.0
 - Visual Studio Code 
 - Git dan akun GitHub  
 - Google Chrome
@@ -36,9 +36,12 @@ Keamanan algoritma Diffie-Hellman bergantung pada kesulitan perhitungan discrete
 ## 4. Langkah Percobaan
 (Tuliskan langkah yang dilakukan sesuai instruksi.  
 Contoh format:
-1. Membuat file `caesar_cipher.py` di folder `praktikum/week2-cryptosystem/src/`.
+1. Membuat file `simulasi-diffie hellman.py` di folder `praktikum/week7-diffie-hellman/src/`.
 2. Menyalin kode program dari panduan praktikum.
-3. Menjalankan program dengan perintah `python caesar_cipher.py`.)
+3. Menjalankan program dengan perintah `python simulasi-diffie hellman.py`.)
+4. Membuat folder screenshots dan menguploud file hasil.jpg pada folder praktikum/week7-diffie-hellman/Sreenshots/.
+5. Menjawab analisis serangan MITM.
+6. Mengerjakan soal yang ada pada folder praktikum/week7-diffie-hellman/laporan.md/
 
 ---
 
