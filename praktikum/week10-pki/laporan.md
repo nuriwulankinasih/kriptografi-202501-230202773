@@ -1,29 +1,33 @@
 # Laporan Praktikum Kriptografi
-Minggu ke-: X  
-Topik: [judul praktikum]  
-Nama: [Nama Mahasiswa]  
-NIM: [NIM Mahasiswa]  
-Kelas: [Kelas]  
+Minggu ke-: 10  
+Topik: Public Key Infrastructure (PKI & Certificate Authority)
+
+Nama: Nuri Wulan Kinasih
+NIM: 230202773
+Kelas: 5IKRB  
 
 ---
 
 ## 1. Tujuan
-(Tuliskan tujuan pembelajaran praktikum sesuai modul.)
-
+1. Membuat sertifikat digital sederhana.
+2. Menjelaskan peran Certificate Authority (CA) dalam sistem PKI.
+3. Mengevaluasi fungsi PKI dalam komunikasi aman (contoh: HTTPS, TLS).
 ---
 
 ## 2. Dasar Teori
-(Ringkas teori relevan (cukup 2–3 paragraf).  
-Contoh: definisi cipher klasik, konsep modular aritmetika, dll.  )
+Public Key Infrastructure (PKI) adalah sistem yang digunakan untuk mengatur dan mengamankan penggunaan kunci publik dalam komunikasi digital. PKI membantu memastikan bahwa proses enkripsi, tanda tangan digital, dan pertukaran data dapat dilakukan dengan aman. Dengan adanya PKI, pengguna tidak hanya menggunakan kunci publik secara sembarangan, tetapi juga dapat memastikan bahwa kunci tersebut benar-benar milik pihak yang tepat, sehingga komunikasi menjadi lebih terpercaya.
+
+Salah satu bagian terpenting dalam PKI adalah Certificate Authority (CA). CA berperan sebagai pihak yang dipercaya untuk menerbitkan sertifikat digital. Sertifikat digital ini berisi identitas pemilik dan kunci publiknya, yang telah diverifikasi dan ditandatangani oleh CA. Karena adanya tanda tangan dari CA, pengguna lain dapat yakin bahwa kunci publik tersebut asli dan tidak dipalsukan.
+
+Selain CA, PKI juga memiliki komponen pendukung lainnya seperti Registration Authority (RA) dan mekanisme pencabutan sertifikat. RA bertugas mengecek identitas pemohon sebelum sertifikat diterbitkan, sedangkan pencabutan sertifikat digunakan jika kunci sudah tidak aman atau tidak berlaku lagi. Dengan sistem ini, PKI mampu menjaga keamanan dan kepercayaan dalam berbagai layanan digital seperti website aman (HTTPS), email, dan transaksi online.
 
 ---
 
 ## 3. Alat dan Bahan
-(- Python 3.x  
-- Visual Studio Code / editor lain  
+- Python 3.x  
+- Visual Studio Code 
 - Git dan akun GitHub  
-- Library tambahan (misalnya pycryptodome, jika diperlukan)  )
-
+- Google Chrome
 ---
 
 ## 4. Langkah Percobaan
