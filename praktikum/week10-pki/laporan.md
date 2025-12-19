@@ -68,10 +68,18 @@ Hasil eksekusi program Caesar Cipher:
 ---
 
 ## 7. Jawaban Pertanyaan
-(Jawab pertanyaan diskusi yang diberikan pada modul.  
-- Pertanyaan 1: …  
-- Pertanyaan 2: …  
-)
+1. Apa fungsi utama Certificate Authority (CA)?
+2. Mengapa self-signed certificate tidak cukup untuk sistem produksi?
+3. Bagaimana PKI mencegah serangan MITM dalam komunikasi TLS/HTTPS?
+
+Jawaban: 
+
+1. Certificate Authority (CA) berfungsi sebagai pihak terpercaya yang menerbitkan dan memvalidasi sertifikat digital untuk mengikat identitas suatu entitas (seperti website, organisasi, atau individu) dengan kunci publiknya. CA melakukan proses verifikasi identitas sebelum menerbitkan sertifikat, sehingga pengguna dapat yakin bahwa kunci publik yang diterima benar-benar milik pihak yang sah. Dengan adanya CA, komunikasi digital dapat berlangsung secara aman karena keaslian identitas pihak yang berkomunikasi dapat dipercaya.
+   
+2. Self-signed certificate tidak cukup untuk sistem produksi karena sertifikat tersebut ditandatangani oleh pemiliknya sendiri tanpa verifikasi dari pihak tepercaya. Akibatnya, klien atau browser tidak memiliki cara untuk memastikan keaslian identitas server, sehingga rawan terhadap serangan pemalsuan identitas. Selain itu, self-signed certificate biasanya akan memunculkan peringatan keamanan pada browser, menurunkan tingkat kepercayaan pengguna, dan tidak cocok untuk lingkungan produksi yang membutuhkan jaminan keamanan dan kepercayaan tinggi.
+
+3. Public Key Infrastructure (PKI) mencegah serangan Man-in-the-Middle (MITM) dengan memastikan bahwa kunci publik server yang digunakan dalam komunikasi TLS/HTTPS telah diverifikasi oleh CA tepercaya. Ketika klien mengakses sebuah website, browser akan memeriksa sertifikat digital server, termasuk tanda tangan CA dan kecocokan nama domain. Jika sertifikat valid, klien yakin bahwa kunci publik tersebut milik server yang benar, sehingga penyerang tidak dapat menggantikan kunci publik tanpa terdeteksi. Dengan demikian, proses pertukaran kunci dan enkripsi komunikasi menjadi aman dari penyadapan dan pemalsuan.
+
 ---
 
 ## 8. Kesimpulan
@@ -80,20 +88,13 @@ Hasil eksekusi program Caesar Cipher:
 ---
 
 ## 9. Daftar Pustaka
-(Cantumkan referensi yang digunakan.  
-Contoh:  
-- Katz, J., & Lindell, Y. *Introduction to Modern Cryptography*.  
-- Stallings, W. *Cryptography and Network Security*.  )
-
 ---
 
 ## 10. Commit Log
-(Tuliskan bukti commit Git yang relevan.  
-Contoh:
 ```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
+commit week10-pki
+Author: Nuri Wulan kinasih <kinasihnuri60@gmail.com>
+Date:   2025-12-19
 
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
+    week10-pki: Public Key Infrastructure (PKI & Certificate Authority)
 ```
