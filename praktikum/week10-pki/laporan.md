@@ -33,11 +33,15 @@ Selain CA, PKI juga memiliki komponen pendukung lainnya seperti Registration Aut
 ---
 
 ## 4. Langkah Percobaan
-(Tuliskan langkah yang dilakukan sesuai instruksi.  
-Contoh format:
-1. Membuat file `caesar_cipher.py` di folder `praktikum/week2-cryptosystem/src/`.
+1. Membuat file `sertifikat.py` di folder `praktikum/week10-pki/src/`.
 2. Menyalin kode program dari panduan praktikum.
-3. Menjalankan program dengan perintah `python caesar_cipher.py`.)
+3. Menjalankan program dengan perintah `python sertifikat.py`.)
+4. Membuat file `verifiksi sertifikat.py` di folder `praktikum/week10-pki/src/`.
+5. memodif kode program dari referensi
+6. Menjalankan program dengan perintah `python verifikasi sertifikat.py`.)
+7. Menjawab pertanyaan diskusi.
+8. Menyelesaikan laporan.md
+
 
 ---
 
@@ -82,7 +86,7 @@ Contoh format:
 
 Hasilnya : 
 
-    Menghasilkan "cert.pem" yang berisi code: 
+    Menghasilkan `cert.pem` yang berisi code: 
     
                     -----BEGIN CERTIFICATE-----
         MIIDBjCCAe6gAwIBAgIUKYEIA5JvCumc9dyBiE1ucQbOwcUwDQYJKoZIhvcNAQEL
