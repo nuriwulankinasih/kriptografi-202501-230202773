@@ -80,26 +80,26 @@ Contoh format:
 
 Hasilnya : 
 
-Menghasilkan "cert.pem" yang berisi code
-                -----BEGIN CERTIFICATE-----
-    MIIDBjCCAe6gAwIBAgIUKYEIA5JvCumc9dyBiE1ucQbOwcUwDQYJKoZIhvcNAQEL
-    BQAwPTELMAkGA1UEBhMCSUQxGDAWBgNVBAoMD1VQQiBLcmlwdG9ncmFmaTEUMBIG
-    A1UEAwwLZXhhbXBsZS5jb20wHhcNMjUxMjEzMTUwNTIxWhcNMjYxMjEzMTUwNTIx
-    WjA9MQswCQYDVQQGEwJJRDEYMBYGA1UECgwPVVBCIEtyaXB0b2dyYWZpMRQwEgYD
-    VQQDDAtleGFtcGxlLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB
-    AL9aaV3B5csHWZfsHCInnmCqaZDCCebO+q0sBaY8mcHQv4I5eSJJkrtOZgMouJ6d
-    k7UW2OcEdZ14DudOmit25UcpBAwsPUQi0cWEf7rklxk9Y4w6/nWmnecPklVcdwoB
-    MMJPusUHiAaO0AE2ZKK6EFqEoFXtrjNH23zx9t/DMyvemMuVadZo+h1eZHeYhZX4
-    WrwsnvNP8zEpNQFWjZyfx+NGYGq0gS5eTWsx2g/esDXBOwcWgPNhM8pUQSrF0Rfy
-    5yfRx6guEQ1bbKHQmpYH2HemZ3dHJiZHIsD5nWW0sSAkMSDlxkrMOFdVLnsPp15C
-    U6uNWTa5fQcwE8enndaqvaECAwEAATANBgkqhkiG9w0BAQsFAAOCAQEAZNA9fKI7
-    sUwZ3dnSQHMhb+G1k5YEPQpMjjYui0pYfYnCNQTl20vf38RihQuVfElAuJJ3JFjK
-    tNW180Dm25bM+yKcTzT5isrF9KqFS/m84mnQ2/nEzIf2GarjfCz3FVyti1hVeqK3
-    s8KiQiosFipNTmgPwYur0qPwjMW6VXzNIk/9RqBiyNMO4RKbZnM6YH96Cl0lDJGL
-    Fy0rcOizYd7QTGfP0A/oBCoJGFTLtc0fRNVgjUZv1ctxCEBCVCwtBd/ucjTMgEZD
-    DSsmwFOynyA2Y+eaPG2H4UJqFCEI84t7h5362hbBh21Bl0dsi2KaMo/kJULXl+WA
-    YHv7c5cO/jMCpw==
-    -----END CERTIFICATE-----
+    Menghasilkan "cert.pem" yang berisi code
+                    -----BEGIN CERTIFICATE-----
+        MIIDBjCCAe6gAwIBAgIUKYEIA5JvCumc9dyBiE1ucQbOwcUwDQYJKoZIhvcNAQEL
+        BQAwPTELMAkGA1UEBhMCSUQxGDAWBgNVBAoMD1VQQiBLcmlwdG9ncmFmaTEUMBIG
+        A1UEAwwLZXhhbXBsZS5jb20wHhcNMjUxMjEzMTUwNTIxWhcNMjYxMjEzMTUwNTIx
+        WjA9MQswCQYDVQQGEwJJRDEYMBYGA1UECgwPVVBCIEtyaXB0b2dyYWZpMRQwEgYD
+        VQQDDAtleGFtcGxlLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB
+        AL9aaV3B5csHWZfsHCInnmCqaZDCCebO+q0sBaY8mcHQv4I5eSJJkrtOZgMouJ6d
+        k7UW2OcEdZ14DudOmit25UcpBAwsPUQi0cWEf7rklxk9Y4w6/nWmnecPklVcdwoB
+        MMJPusUHiAaO0AE2ZKK6EFqEoFXtrjNH23zx9t/DMyvemMuVadZo+h1eZHeYhZX4
+        WrwsnvNP8zEpNQFWjZyfx+NGYGq0gS5eTWsx2g/esDXBOwcWgPNhM8pUQSrF0Rfy
+        5yfRx6guEQ1bbKHQmpYH2HemZ3dHJiZHIsD5nWW0sSAkMSDlxkrMOFdVLnsPp15C
+        U6uNWTa5fQcwE8enndaqvaECAwEAATANBgkqhkiG9w0BAQsFAAOCAQEAZNA9fKI7
+        sUwZ3dnSQHMhb+G1k5YEPQpMjjYui0pYfYnCNQTl20vf38RihQuVfElAuJJ3JFjK
+        tNW180Dm25bM+yKcTzT5isrF9KqFS/m84mnQ2/nEzIf2GarjfCz3FVyti1hVeqK3
+        s8KiQiosFipNTmgPwYur0qPwjMW6VXzNIk/9RqBiyNMO4RKbZnM6YH96Cl0lDJGL
+        Fy0rcOizYd7QTGfP0A/oBCoJGFTLtc0fRNVgjUZv1ctxCEBCVCwtBd/ucjTMgEZD
+        DSsmwFOynyA2Y+eaPG2H4UJqFCEI84t7h5362hbBh21Bl0dsi2KaMo/kJULXl+WA
+        YHv7c5cO/jMCpw==
+        -----END CERTIFICATE-----
 
 ### Langkah 2--Verifikasi Sertifikat
 
@@ -131,8 +131,7 @@ Menghasilkan "cert.pem" yang berisi code
     except Exception:
         print("Sertifikat TIDAK VALID")
 
-Hasilnya :
-
+Hasilnya : 
 Sertifikat VALID dan asli
 
 ---
