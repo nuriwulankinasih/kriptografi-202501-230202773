@@ -40,30 +40,71 @@ Contoh format:
 ---
 
 ## 5. Source Code
-(Salin kode program utama yang dibuat atau dimodifikasi.  
-Gunakan blok kode:
+### Langkah 1 — Membuat Sertifikat Digital Sederhana
 
-```python
-# contoh potongan kode
-def encrypt(text, key):
-    return ...
-```
-)
+    from cryptography import x509
+    from cryptography.x509.oid import NameOID
+    from cryptography.hazmat.primitives import hashes, serialization
+    from cryptography.hazmat.primitives.asymmetric import rsa
+    from datetime import datetime, timedelta
+
+    # Generate key pair
+    key = rsa.generate_private_key(public_exponent=65537, key_size=2048)
+    
+    # Buat subject & issuer (CA sederhana = self-signed)
+    subject = issuer = x509.Name([
+        x509.NameAttribute(NameOID.COUNTRY_NAME, u"ID"),
+        x509.NameAttribute(NameOID.ORGANIZATION_NAME, u"UPB Kriptografi"),
+        x509.NameAttribute(NameOID.COMMON_NAME, u"example.com"),
+    ])
+    
+    # Buat sertifikat
+    cert = (
+        x509.CertificateBuilder()
+        .subject_name(subject)
+        .issuer_name(issuer)
+        .public_key(key.public_key())
+        .serial_number(x509.random_serial_number())
+        .not_valid_before(datetime.utcnow())
+        .not_valid_after(datetime.utcnow() + timedelta(days=365))
+        .sign(key, hashes.SHA256())
+    )
+
+    # Simpan sertifikat
+    with open("cert.pem", "wb") as f:
+        f.write(cert.public_bytes(serialization.Encoding.PEM))
+
+    print("Sertifikat digital berhasil dibuat: cert.pem")
+
+    Hasilnya : Menghasilkan "cert.pem" yang berisi code
+                -----BEGIN CERTIFICATE-----
+    MIIDBjCCAe6gAwIBAgIUKYEIA5JvCumc9dyBiE1ucQbOwcUwDQYJKoZIhvcNAQEL
+    BQAwPTELMAkGA1UEBhMCSUQxGDAWBgNVBAoMD1VQQiBLcmlwdG9ncmFmaTEUMBIG
+    A1UEAwwLZXhhbXBsZS5jb20wHhcNMjUxMjEzMTUwNTIxWhcNMjYxMjEzMTUwNTIx
+    WjA9MQswCQYDVQQGEwJJRDEYMBYGA1UECgwPVVBCIEtyaXB0b2dyYWZpMRQwEgYD
+    VQQDDAtleGFtcGxlLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB
+    AL9aaV3B5csHWZfsHCInnmCqaZDCCebO+q0sBaY8mcHQv4I5eSJJkrtOZgMouJ6d
+    k7UW2OcEdZ14DudOmit25UcpBAwsPUQi0cWEf7rklxk9Y4w6/nWmnecPklVcdwoB
+    MMJPusUHiAaO0AE2ZKK6EFqEoFXtrjNH23zx9t/DMyvemMuVadZo+h1eZHeYhZX4
+    WrwsnvNP8zEpNQFWjZyfx+NGYGq0gS5eTWsx2g/esDXBOwcWgPNhM8pUQSrF0Rfy
+    5yfRx6guEQ1bbKHQmpYH2HemZ3dHJiZHIsD5nWW0sSAkMSDlxkrMOFdVLnsPp15C
+    U6uNWTa5fQcwE8enndaqvaECAwEAATANBgkqhkiG9w0BAQsFAAOCAQEAZNA9fKI7
+    sUwZ3dnSQHMhb+G1k5YEPQpMjjYui0pYfYnCNQTl20vf38RihQuVfElAuJJ3JFjK
+    tNW180Dm25bM+yKcTzT5isrF9KqFS/m84mnQ2/nEzIf2GarjfCz3FVyti1hVeqK3
+    s8KiQiosFipNTmgPwYur0qPwjMW6VXzNIk/9RqBiyNMO4RKbZnM6YH96Cl0lDJGL
+    Fy0rcOizYd7QTGfP0A/oBCoJGFTLtc0fRNVgjUZv1ctxCEBCVCwtBd/ucjTMgEZD
+    DSsmwFOynyA2Y+eaPG2H4UJqFCEI84t7h5362hbBh21Bl0dsi2KaMo/kJULXl+WA
+    YHv7c5cO/jMCpw==
+    -----END CERTIFICATE-----
+
 
 ---
 
 ## 6. Hasil dan Pembahasan
-(- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
-- Berikan tabel atau ringkasan hasil uji jika diperlukan.  
-- Jelaskan apakah hasil sesuai ekspektasi.  
-- Bahas error (jika ada) dan solusinya. 
+<img width="1920" height="1080" alt="cert pem" src="https://github.com/user-attachments/assets/7285bfa9-61ed-4f5e-b6db-1721926966a0" />
 
-Hasil eksekusi program Caesar Cipher:
+<img width="1920" height="1080" alt="verifikasi sertifikat" src="https://github.com/user-attachments/assets/c3093a77-b880-468c-8171-b4a78c1b6ce4" />
 
-![Hasil Eksekusi](screenshots/output.png)
-![Hasil Input](screenshots/input.png)
-![Hasil Output](screenshots/output.png)
-)
 
 ---
 
