@@ -78,7 +78,9 @@ Contoh format:
 
 
 
-Hasilnya : Menghasilkan "cert.pem" yang berisi code
+Hasilnya : 
+
+Menghasilkan "cert.pem" yang berisi code
                 -----BEGIN CERTIFICATE-----
     MIIDBjCCAe6gAwIBAgIUKYEIA5JvCumc9dyBiE1ucQbOwcUwDQYJKoZIhvcNAQEL
     BQAwPTELMAkGA1UEBhMCSUQxGDAWBgNVBAoMD1VQQiBLcmlwdG9ncmFmaTEUMBIG
@@ -99,6 +101,39 @@ Hasilnya : Menghasilkan "cert.pem" yang berisi code
     YHv7c5cO/jMCpw==
     -----END CERTIFICATE-----
 
+### Langkah 2--Verifikasi Sertifikat
+
+    from cryptography import x509
+    from cryptography.hazmat.primitives import serialization
+    from cryptography.hazmat.primitives.asymmetric import padding
+    from cryptography.hazmat.primitives import hashes
+    
+    # Baca sertifikat
+    with open("cert.pem", "rb") as f:
+        cert = x509.load_pem_x509_certificate(f.read())
+
+    # Ambil public key dari sertifikat (CA)
+    public_key = cert.public_key()
+    
+    # Ambil data yang ditandatangani
+    tbs_cert = cert.tbs_certificate_bytes
+    signature = cert.signature
+    
+    # Verifikasi tanda tangan sertifikat
+    try:
+        public_key.verify(
+            signature,
+            tbs_cert,
+            padding.PKCS1v15(),
+            cert.signature_hash_algorithm,
+        )
+        print("Sertifikat VALID dan asli")
+    except Exception:
+        print("Sertifikat TIDAK VALID")
+
+Hasilnya :
+
+Sertifikat VALID dan asli
 
 ---
 
