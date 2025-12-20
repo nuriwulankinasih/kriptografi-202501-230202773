@@ -74,6 +74,7 @@ Contoh format:
     with open("cert.pem", "wb") as f:
         f.write(cert.public_bytes(serialization.Encoding.PEM))
 
+
     print("Sertifikat digital berhasil dibuat: cert.pem")
 
     Hasilnya : Menghasilkan "cert.pem" yang berisi code
