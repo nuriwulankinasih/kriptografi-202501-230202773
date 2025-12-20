@@ -3,7 +3,9 @@ Minggu ke-: 10
 Topik: Public Key Infrastructure (PKI & Certificate Authority)
 
 Nama: Nuri Wulan Kinasih
+
 NIM: 230202773
+
 Kelas: 5IKRB  
 
 ---
@@ -136,14 +138,38 @@ Hasilnya :
 
     Sertifikat VALID dan asli
 
+### Langkah 3 -- Analisis PKI
 
+- Bagaimana browser memverifikasi sertifikat HTTPS?
+
+  Browser memverifikasi sertifikat HTTPS dengan memeriksa tanda tangan digital menggunakan public key dari Certificate
+  Authority (CA) tepercaya. Jika sertifikat valid, belum kedaluwarsa, dan sesuai dengan domain, maka koneksi dinyatakan aman.
+  
+- Apa yang terjadi jika CA palsu menerbitkan sertifikat?
+
+  Sertifikat yang diterbitkan oleh CA palsu tidak akan dipercaya oleh browser dan akan menampilkan peringatan keamanan.
+  Meskipun sertifikat valid secara teknis, tanpa CA tepercaya sertifikat tersebut tidak aman digunakan.
+  
+- Mengapa PKI penting dalam komunikasi aman (misalnya transaksi online)?
+
+  PKI memastikan keaslian identitas dan keamanan pertukaran data. Dengan PKI, komunikasi TLS/HTTPS terlindungi dari
+  penyadapan dan serangan Man-in-the-Middle (MITM).
 ---
 
 ## 6. Hasil dan Pembahasan
+Hasil Langkah 1, membuat sertifikat: 
+
 <img width="1920" height="1080" alt="cert pem" src="https://github.com/user-attachments/assets/7285bfa9-61ed-4f5e-b6db-1721926966a0" />
+
+Hasil Langkah 2, verifikasi sertifikat :
 
 <img width="1920" height="1080" alt="verifikasi sertifikat" src="https://github.com/user-attachments/assets/c3093a77-b880-468c-8171-b4a78c1b6ce4" />
 
+Pembahasan :
+
+Pada Langkah 1, dilakukan pembuatan sertifikat digital sederhana menggunakan Python dengan pustaka cryptography. Sertifikat yang dihasilkan bersifat self-signed, di mana pihak penerbit (issuer) dan pemilik sertifikat (subject) memiliki identitas yang sama. Proses ini diawali dengan pembangkitan pasangan kunci RSA berukuran 2048 bit, kemudian dilanjutkan dengan penyusunan informasi identitas seperti negara, organisasi, dan nama domain. Sertifikat tersebut ditandatangani menggunakan algoritma hash SHA-256 dan berhasil disimpan dalam file cert.pem. Keberhasilan langkah ini menunjukkan bahwa proses pembangkitan kunci publik serta pembuatan sertifikat digital telah berjalan dengan benar.
+
+Pada Langkah 2, sertifikat digital yang telah dibuat kemudian diverifikasi untuk memastikan keaslian dan integritasnya. Proses verifikasi dilakukan dengan membaca file cert.pem, mengambil kunci publik dari sertifikat, serta memeriksa kesesuaian tanda tangan digital terhadap data sertifikat yang ditandatangani. Hasil verifikasi menunjukkan bahwa sertifikat dinyatakan valid dan asli, yang menandakan bahwa sertifikat tidak mengalami perubahan dan tanda tangan digital sesuai dengan data aslinya. Meskipun demikian, karena sertifikat bersifat self-signed dan tidak diterbitkan oleh Certificate Authority (CA) tepercaya, sertifikat ini hanya cocok digunakan untuk keperluan pembelajaran dan pengujian, bukan untuk lingkungan produksi.
 
 ---
 
@@ -163,7 +189,7 @@ Jawaban:
 ---
 
 ## 8. Kesimpulan
-(Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
+Berdasarkan percobaan yang telah dilakukan, dapat disimpulkan bahwa proses pembuatan dan verifikasi sertifikat digital menggunakan konsep Public Key Infrastructure (PKI) berhasil dilakukan dengan baik. Sertifikat digital self-signed dapat dibuat dan diverifikasi keasliannya secara kriptografis menggunakan kunci publik dan tanda tangan digital. Percobaan ini menunjukkan bahwa PKI berperan penting dalam menjamin keaslian identitas dan keamanan komunikasi, meskipun untuk penggunaan produksi diperlukan sertifikat yang diterbitkan oleh Certificate Authority (CA) tepercaya.
 
 ---
 
