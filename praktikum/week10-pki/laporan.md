@@ -80,7 +80,8 @@ Contoh format:
 
 Hasilnya : 
 
-    Menghasilkan "cert.pem" yang berisi code
+    Menghasilkan "cert.pem" yang berisi code: 
+    
                     -----BEGIN CERTIFICATE-----
         MIIDBjCCAe6gAwIBAgIUKYEIA5JvCumc9dyBiE1ucQbOwcUwDQYJKoZIhvcNAQEL
         BQAwPTELMAkGA1UEBhMCSUQxGDAWBgNVBAoMD1VQQiBLcmlwdG9ncmFmaTEUMBIG
@@ -132,7 +133,9 @@ Hasilnya :
         print("Sertifikat TIDAK VALID")
 
 Hasilnya : 
-Sertifikat VALID dan asli
+
+    Sertifikat VALID dan asli
+
 
 ---
 
