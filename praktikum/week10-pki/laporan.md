@@ -78,7 +78,7 @@ Contoh format:
 
 
 
-    Hasilnya : Menghasilkan "cert.pem" yang berisi code
+Hasilnya : Menghasilkan "cert.pem" yang berisi code
                 -----BEGIN CERTIFICATE-----
     MIIDBjCCAe6gAwIBAgIUKYEIA5JvCumc9dyBiE1ucQbOwcUwDQYJKoZIhvcNAQEL
     BQAwPTELMAkGA1UEBhMCSUQxGDAWBgNVBAoMD1VQQiBLcmlwdG9ncmFmaTEUMBIG
