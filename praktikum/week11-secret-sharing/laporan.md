@@ -1,29 +1,35 @@
 # Laporan Praktikum Kriptografi
-Minggu ke-: X  
-Topik: [judul praktikum]  
-Nama: [Nama Mahasiswa]  
-NIM: [NIM Mahasiswa]  
-Kelas: [Kelas]  
+Minggu ke-: 11
+Topik: Secret Sharing (Shamir’s Secret Sharing)
+
+Nama: Nuri Wulan Kinasih  
+
+NIM: 230202773        
+
+Kelas: 5IKRB
 
 ---
 
 ## 1. Tujuan
-(Tuliskan tujuan pembelajaran praktikum sesuai modul.)
-
+1. Menjelaskan konsep Shamir Secret Sharing (SSS).
+2. Melakukan simulasi pembagian rahasia ke beberapa pihak menggunakan skema SSS.
+3. Menganalisis keamanan skema distribusi rahasia.
 ---
 
 ## 2. Dasar Teori
-(Ringkas teori relevan (cukup 2–3 paragraf).  
-Contoh: definisi cipher klasik, konsep modular aritmetika, dll.  )
+Shamir’s Secret Sharing merupakan salah satu metode kriptografi yang digunakan untuk membagi sebuah rahasia (secret) menjadi beberapa bagian yang disebut shares. Metode ini dirancang oleh Adi Shamir pada tahun 1979 dengan tujuan meningkatkan keamanan penyimpanan dan pengelolaan informasi sensitif. Dalam skema ini, sebuah rahasia tidak disimpan secara utuh pada satu pihak, melainkan dibagi ke beberapa pihak sehingga tidak ada satu pihak pun yang dapat mengetahui rahasia tersebut secara sendiri.
+
+Prinsip utama Shamir’s Secret Sharing adalah konsep threshold scheme (k, n), di mana sebuah rahasia dibagi menjadi n bagian dan hanya dapat direkonstruksi jika minimal k bagian digabungkan kembali. Skema ini memanfaatkan konsep matematika polinomial, di mana rahasia disimpan sebagai nilai konstanta dari sebuah polinomial berderajat k−1. Selama jumlah share yang dikumpulkan kurang dari k, maka rahasia tidak dapat diketahui, sehingga menjamin kerahasiaan informasi meskipun sebagian share bocor.
+
+Shamir’s Secret Sharing banyak digunakan dalam sistem keamanan modern, seperti manajemen kunci kriptografi, penyimpanan cadangan data penting, dan sistem otorisasi terdistribusi. Dengan membagi rahasia ke beberapa pihak, risiko kehilangan data akibat kegagalan satu pihak dapat diminimalkan, sekaligus meningkatkan ketahanan terhadap serangan. Oleh karena itu, skema ini menjadi solusi yang efektif untuk menjaga keamanan dan ketersediaan informasi dalam lingkungan yang membutuhkan tingkat kepercayaan dan keamanan tinggi.
 
 ---
 
 ## 3. Alat dan Bahan
-(- Python 3.x  
-- Visual Studio Code / editor lain  
+- Python 3.14  
+- Visual Studio Code
 - Git dan akun GitHub  
-- Library tambahan (misalnya pycryptodome, jika diperlukan)  )
-
+- Google Chrome
 ---
 
 ## 4. Langkah Percobaan
