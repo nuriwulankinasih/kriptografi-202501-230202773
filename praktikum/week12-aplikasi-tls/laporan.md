@@ -1,29 +1,34 @@
 # Laporan Praktikum Kriptografi
-Minggu ke-: X  
-Topik: [judul praktikum]  
-Nama: [Nama Mahasiswa]  
-NIM: [NIM Mahasiswa]  
-Kelas: [Kelas]  
+Minggu ke-: 12
+Topik: Aplikasi TLS & E-commerce 
+
+Nama: Nuri Wulan Kinasih  
+
+NIM: 230202773  
+Kelas: 5IKRB  
 
 ---
 
 ## 1. Tujuan
-(Tuliskan tujuan pembelajaran praktikum sesuai modul.)
-
+1. Menganalisis penggunaan kriptografi pada email dan SSL/TLS.
+2. Menjelaskan enkripsi dalam transaksi e-commerce.
+3. Mengevaluasi isu etika & privasi dalam penggunaan kriptografi di kehidupan sehari-hari.
 ---
 
 ## 2. Dasar Teori
-(Ringkas teori relevan (cukup 2–3 paragraf).  
-Contoh: definisi cipher klasik, konsep modular aritmetika, dll.  )
+Transport Layer Security (TLS) merupakan protokol keamanan yang digunakan untuk melindungi komunikasi data antara klien dan server di jaringan internet. TLS berfungsi mengenkripsi data yang dikirim sehingga tidak dapat dibaca oleh pihak yang tidak berwenang. Dalam implementasinya, TLS memanfaatkan mekanisme kriptografi asimetris dan simetris serta sertifikat digital yang dikeluarkan oleh Certificate Authority (CA). Protokol ini menjadi standar utama dalam pengamanan website modern yang ditandai dengan penggunaan protokol HTTPS.
+
+Dalam konteks e-commerce, TLS memiliki peran yang sangat penting untuk menjaga keamanan transaksi online. Data sensitif seperti informasi login, nomor kartu kredit, alamat pengiriman, dan detail pembayaran dienkripsi selama proses transmisi. Dengan adanya TLS, risiko serangan seperti penyadapan (sniffing), pencurian data, dan serangan Man-in-the-Middle (MITM) dapat diminimalkan. Selain itu, sertifikat digital yang digunakan pada TLS membantu pengguna memastikan bahwa mereka terhubung ke situs e-commerce yang sah dan bukan situs palsu.
+
+Penerapan TLS juga meningkatkan kepercayaan pengguna terhadap platform e-commerce. Browser modern akan memberikan peringatan jika suatu situs tidak menggunakan TLS, sehingga dapat menurunkan kepercayaan pelanggan. Oleh karena itu, TLS tidak hanya berfungsi sebagai mekanisme keamanan teknis, tetapi juga sebagai komponen penting dalam membangun kredibilitas, keamanan transaksi, serta keberlangsungan bisnis digital di era modern.
 
 ---
 
 ## 3. Alat dan Bahan
-(- Python 3.x  
-- Visual Studio Code / editor lain  
-- Git dan akun GitHub  
-- Library tambahan (misalnya pycryptodome, jika diperlukan)  )
-
+- Python 3.14
+- Visual Studio Code 
+- GitHub  
+- Google Chrome
 ---
 
 ## 4. Langkah Percobaan
