@@ -42,15 +42,65 @@ Contoh format:
 ---
 
 ## 5. Source Code
-(Salin kode program utama yang dibuat atau dimodifikasi.  
-Gunakan blok kode:
+    import random
+    
+    # PRIME besar (harus lebih besar dari secret)
+    PRIME = 2**521 - 1
+    
+    def string_to_int(text):
+        return int.from_bytes(text.encode("utf-8"), "big")
+    
+    def int_to_string(number):
+        length = (number.bit_length() + 7) // 8
+        return number.to_bytes(length, "big").decode("utf-8")
+    
+    def split_secret(secret, k, n):
+        secret_int = string_to_int(secret)
+    
+        coeffs = [secret_int] + [random.randrange(1, PRIME) for _ in range(k - 1)]
+    
+        def polynomial(x):
+            return sum(coeffs[i] * pow(x, i, PRIME) for i in range(k)) % PRIME
+    
+        return [(i, polynomial(i)) for i in range(1, n + 1)]
+    
+    def recover_secret(shares):
+        def lagrange(x, points):
+            total = 0
+            for i, (xi, yi) in enumerate(points):
+                term = yi
+                for j, (xj, _) in enumerate(points):
+                    if i != j:
+                        term *= (x - xj) * pow(xi - xj, -1, PRIME)
+                        term %= PRIME
+                total += term
+            return total % PRIME
+    
+        secret_int = lagrange(0, shares)
+        return int_to_string(secret_int)
+    
+    # ============================
+    # MAIN
+    # ============================
+    secret = "KriptografiUPB2025"
+    
+    shares = split_secret(secret, 3, 5)
+    print("Shares:")
+    for s in shares:
+        print(s)
+    
+    recovered = recover_secret(shares[:3])
+    print("\nRecovered secret:", recovered)
 
-```python
-# contoh potongan kode
-def encrypt(text, key):
-    return ...
-```
-)
+Hasilnya :
+
+    (1, 3059922323003560657135166065444894582706920526301386073747359322319028860617287486376724589230610771490126594550604396025864744552930183268166717761925746784)
+(2, 1935247417478662038012349328445708941638015299926968651373159720233295119925955100274761030704549852767072791886384192867393903656518266784405139142633411187)
+(3, 3490772943555913857613450588083836294062719621020053142271864652928341961323658893816668965083271798808134903398826820915497014707391589518604441958082476141)
+(4, 861701241104706400956569045277883422711598189437334137049010661218626201412742814879888751705322054636016617696451422133052089705833507658190597917157884495)
+(5, 912829970255649383023605499109243544854086305322117045099061204289691023590862915586980031232155175228014246170738854557181116651560665015737635310974693400)
+
+Recovered secret: KriptografiUPB2025
 
 ---
 
