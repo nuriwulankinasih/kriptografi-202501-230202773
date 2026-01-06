@@ -42,6 +42,8 @@ Contoh format:
 ---
 
 ## 5. Source Code
+### Langkah 1 Implementasi Shamir Secret Sharing
+
     import random
     
     # PRIME besar (harus lebih besar dari secret)
@@ -102,28 +104,105 @@ Hasilnya :
     
     Recovered secret: KriptografiUPB2025
 
+### Langkah 2 Simulasi Manual (Tanpa Library)
+
+    import random
+    
+    # Parameter
+    p = 2089            # bilangan prima (harus > secret)
+    secret = 1234       # rahasia (a0)
+    k = 3               # threshold
+    n = 5               # jumlah share
+    
+    # Bangun polinomial f(x) = a0 + a1*x + a2*x^2 mod p
+    coefficients = [secret] + [random.randint(1, p-1) for _ in range(k-1)]
+    
+    def polynomial(x, coeffs, p):
+        result = 0
+        for i in range(len(coeffs)):
+            result = (result + coeffs[i] * pow(x, i)) % p
+        return result
+    
+    # Membuat shares (x, f(x))
+    shares = []
+    for x in range(1, n+1):
+        y = polynomial(x, coefficients, p)
+        shares.append((x, y))
+    
+    print("Shares:")
+    for s in shares:
+        print(s)
+    
+    # Lagrange Interpolation untuk rekonstruksi secret
+    def lagrange_interpolation(x, shares, p):
+        total = 0
+        for i, (xi, yi) in enumerate(shares):
+            prod = yi
+            for j, (xj, _) in enumerate(shares):
+                if i != j:
+                    prod *= (x - xj) * pow(xi - xj, -1, p)
+                    prod %= p
+            total += prod
+        return total % p
+    
+    # Rekonstruksi secret menggunakan k shares
+    recovered_secret = lagrange_interpolation(0, shares[:k], p)
+    print("\nRecovered Secret:", recovered_secret) 
+
+Hasilnya: 
+    (1, 1262)
+    (2, 1482)
+    (3, 1894)
+    (4, 409)
+    (5, 1205)
+    
+    Recovered Secret: 1234
+
+### Langkah 3 Diskusi
+
+1. Mengapa skema (k, n) aman meskipun sebagian share bocor?
+
+Berdasarkan hasil Langkah 1 dan Langkah 2, terlihat bahwa setiap share yang dihasilkan berupa pasangan bilangan (x, y) yang tampak acak dan tidak memiliki arti apa pun jika berdiri sendiri. Keamanan skema (k, n) pada Shamir’s Secret Sharing terletak pada penggunaan polinomial berderajat (k−1). Secara matematis, untuk menentukan satu polinomial unik diperlukan minimal k titik. Jika hanya tersedia kurang dari k share, maka terdapat tak hingga kemungkinan polinomial yang dapat dibentuk, sehingga nilai rahasia (konstanta polinomial) tidak dapat ditentukan.
+
+Pada Langkah 1, meskipun satu atau dua share bocor, nilai rahasia "KriptografiUPB2025" tetap tidak dapat direkonstruksi. Hal yang sama juga terlihat pada Langkah 2, di mana rahasia numerik 1234 baru dapat dipulihkan setelah tiga share digunakan. Dengan demikian, kebocoran sebagian share tidak mengurangi keamanan rahasia, selama jumlah share yang bocor masih di bawah nilai threshold k.
+
+2. Apa risiko jika threshold k terlalu kecil atau terlalu besar?
+
+Jika nilai threshold k terlalu kecil, maka tingkat keamanan sistem menjadi rendah. Sebagai contoh, apabila k = 2, maka hanya dua pihak saja yang sudah cukup untuk merekonstruksi rahasia. Kondisi ini meningkatkan risiko penyalahgunaan, karena rahasia dapat dengan mudah diakses jika dua share jatuh ke pihak yang tidak berwenang. Hal ini bertentangan dengan tujuan utama Shamir’s Secret Sharing yang ingin membatasi akses terhadap rahasia secara ketat.
+
+Sebaliknya, jika threshold k terlalu besar, maka risiko operasional meningkat. Jika terlalu banyak pemegang share yang harus dikumpulkan, kemungkinan kehilangan satu atau lebih share menjadi lebih besar. Pada kondisi ini, rahasia bisa tidak dapat dipulihkan sama sekali, meskipun pemilik sah masih ada. Oleh karena itu, pemilihan nilai k harus seimbang antara keamanan dan ketersediaan, sebagaimana ditunjukkan dalam praktik Langkah 1 dan 2 dengan penggunaan k = 3 dari n = 5 yang terbukti efektif.
+
+3. Bagaimana penerapan Shamir’s Secret Sharing di dunia nyata?
+
+Shamir’s Secret Sharing banyak diterapkan dalam sistem keamanan modern. Salah satu contoh utama adalah manajemen kunci cryptocurrency, di mana private key dibagi ke beberapa pihak (misalnya pemilik, notaris, dan penyedia layanan). Private key hanya dapat dipulihkan jika jumlah share yang memenuhi threshold dikumpulkan, sehingga risiko kehilangan atau pencurian kunci dapat diminimalkan.
+
+Selain itu, SSS juga digunakan pada sistem recovery password dan data penting, seperti kunci enkripsi perusahaan atau backup sistem cloud. Dalam kasus ini, tidak ada satu pihak pun yang memegang rahasia secara penuh. Hal ini meningkatkan keamanan organisasi dan mencegah single point of failure. Prinsip yang sama seperti yang ditunjukkan pada hasil Langkah 1 dan Langkah 2 diterapkan secara luas untuk memastikan bahwa data sensitif tetap aman namun tetap dapat dipulihkan saat diperlukan.
+
 ---
 
 ## 6. Hasil dan Pembahasan
-(- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
-- Berikan tabel atau ringkasan hasil uji jika diperlukan.  
-- Jelaskan apakah hasil sesuai ekspektasi.  
-- Bahas error (jika ada) dan solusinya. 
+Hasil eksekusi program Shamir secret sharing:
+<img width="1920" height="1080" alt="shamir_secretsharing" src="https://github.com/user-attachments/assets/94f28e13-5a82-458f-936d-266f0103a87a" />
 
-Hasil eksekusi program Caesar Cipher:
+Hasil eksekusi program simulasi manual
+<img width="1920" height="1080" alt="simulasi manual secret sharing" src="https://github.com/user-attachments/assets/0fb7d408-5bfd-425c-a9e4-2194c8e3d283" />
 
-![Hasil Eksekusi](screenshots/output.png)
-![Hasil Input](screenshots/input.png)
-![Hasil Output](screenshots/output.png)
-)
+Pembahasan:
+Pada Langkah 1, Shamir’s Secret Sharing diimplementasikan menggunakan bilangan prima sangat besar untuk membagi rahasia berupa string “KriptografiUPB2025” menjadi lima share dengan ambang batas tiga. Setiap share dihasilkan dari evaluasi polinomial dan tidak dapat mengungkap rahasia secara mandiri. Proses rekonstruksi menggunakan tiga share berhasil mengembalikan rahasia asli, menunjukkan bahwa algoritma bekerja dengan benar.
+
+Pada Langkah 2, dilakukan simulasi manual dengan bilangan prima kecil dan rahasia berupa angka. Polinomial dibentuk secara sederhana dan share dihitung secara langsung. Dengan interpolasi Lagrange menggunakan tiga share, rahasia berhasil direkonstruksi kembali. Hasil ini menegaskan bahwa baik implementasi realistis maupun simulasi sederhana mengikuti prinsip yang sama, yaitu rahasia hanya dapat diperoleh jika jumlah share memenuhi ambang batas minimum.
 
 ---
 
 ## 7. Jawaban Pertanyaan
-(Jawab pertanyaan diskusi yang diberikan pada modul.  
-- Pertanyaan 1: …  
-- Pertanyaan 2: …  
-)
+1. Apa keuntungan utama Shamir Secret Sharing dibanding membagikan salinan kunci secara langsung?
+2. Apa peran threshold (k) dalam keamanan secret sharing?
+3. Berikan satu contoh skenario nyata di mana SSS sangat bermanfaat.
+
+Jawaban:
+1. Keuntungan utama shamir secret sharing adalah meningkatkan keamanan, karena rahasia tidak disimpan atau dibagikan secara utuh. Setiap pihak hanya memegang sebagian (share) yang secara individual tidak memiliki arti apapun. Berbeda dengan membagikan salinan kunci langsung yang berisiko bocor jika satu pihak disusupi, pada SSS rahasia hanya dapat direkontruksi jika jumlah share yang dikumpulkan memenuhi ambang batas tertentu.
+2. 
+
 ---
 
 ## 8. Kesimpulan
