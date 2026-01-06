@@ -201,7 +201,10 @@ Pada Langkah 2, dilakukan simulasi manual dengan bilangan prima kecil dan rahasi
 
 Jawaban:
 1. Keuntungan utama shamir secret sharing adalah meningkatkan keamanan, karena rahasia tidak disimpan atau dibagikan secara utuh. Setiap pihak hanya memegang sebagian (share) yang secara individual tidak memiliki arti apapun. Berbeda dengan membagikan salinan kunci langsung yang berisiko bocor jika satu pihak disusupi, pada SSS rahasia hanya dapat direkontruksi jika jumlah share yang dikumpulkan memenuhi ambang batas tertentu.
-2. 
+   
+2. Threshold (k) menentukan jumlah minimum share yang diperlukan untuk merekonstruksi rahasia. Jika jumlah share kurang dari k, rahasia sama sekali tidak dapat diketahui. Semakin besar nilai k, semakin tinggi tingkat keamanan karena dibutuhkan lebih banyak pihak untuk bekerja sama, namun konsekuensinya adalah fleksibilitas sistem menjadi lebih rendah.
+
+3. Shamir’s Secret Sharing sangat bermanfaat dalam manajemen kunci kriptografi pada perusahaan atau lembaga keuangan, misalnya untuk menyimpan kunci utama server. Kunci dibagi ke beberapa administrator, dan hanya jika sejumlah administrator tertentu hadir bersama, kunci dapat digunakan, sehingga mencegah penyalahgunaan oleh satu pihak saja.
 
 ---
 
