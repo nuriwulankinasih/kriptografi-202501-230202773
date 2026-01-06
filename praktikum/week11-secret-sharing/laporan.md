@@ -33,11 +33,15 @@ Shamir’s Secret Sharing banyak digunakan dalam sistem keamanan modern, seperti
 ---
 
 ## 4. Langkah Percobaan
-(Tuliskan langkah yang dilakukan sesuai instruksi.  
-Contoh format:
-1. Membuat file `caesar_cipher.py` di folder `praktikum/week2-cryptosystem/src/`.
-2. Menyalin kode program dari panduan praktikum.
-3. Menjalankan program dengan perintah `python caesar_cipher.py`.)
+
+1. Membuat file `shamir-secret-sharing.py` di folder `praktikum/week11-secret-sharing/src/`.
+2. Menyalin lalu memodif kode program dari panduan praktikum.
+3. Menjalankan program dengan perintah sesuai file
+4. Membuat file `simulasi-manual.py` di folder `praktikum/week11-secret-sharing/src/`.
+5. Memodif program
+6. Menjalankan program
+7. Membuat folder screenshot di folder praktikum/week11-secret_sharing/src/.
+8. Menempel hasil eksekusi program ke folder screenshot.
 
 ---
 
