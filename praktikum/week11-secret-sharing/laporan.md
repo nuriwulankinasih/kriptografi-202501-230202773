@@ -209,25 +209,18 @@ Jawaban:
 ---
 
 ## 8. Kesimpulan
-(Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
+Berdasarkan praktikum yang telah dilakukan, Shamir’s Secret Sharing terbukti mampu membagi dan merekonstruksi rahasia secara aman menggunakan skema threshold (k, n). Hasil percobaan menunjukkan bahwa rahasia hanya dapat dipulihkan apabila jumlah share yang digunakan memenuhi nilai threshold, sedangkan sebagian share saja tidak memberikan informasi apa pun tentang rahasia. Dengan demikian, metode ini efektif untuk meningkatkan keamanan dan keandalan dalam pengelolaan data sensitif dan kunci kriptografi.
 
 ---
 
 ## 9. Daftar Pustaka
-(Cantumkan referensi yang digunakan.  
-Contoh:  
-- Katz, J., & Lindell, Y. *Introduction to Modern Cryptography*.  
-- Stallings, W. *Cryptography and Network Security*.  )
-
 ---
 
 ## 10. Commit Log
-(Tuliskan bukti commit Git yang relevan.  
-Contoh:
 ```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
+commit week11-secret-sharing
+Author:  Nuri Wulan Kinasih <kinasihnuri60@gmail.com>
+Date:   2025-01-06
 
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
+    week11-secret-sharing: Secret Sharing (Shamir’s Secret Sharing)
 ```
