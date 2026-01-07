@@ -1,9 +1,11 @@
 # Laporan Praktikum Kriptografi
-Minggu ke-: X  
-Topik: [judul praktikum]  
-Nama: [Nama Mahasiswa]  
-NIM: [NIM Mahasiswa]  
-Kelas: [Kelas]  
+Minggu ke-: 14
+Topik: Analisis Serangan Kriptografi
+
+Nama: Nuri Wulan Kinasih
+
+NIM: 230202773
+Kelas: 5IKRB  
 
 ---
 
