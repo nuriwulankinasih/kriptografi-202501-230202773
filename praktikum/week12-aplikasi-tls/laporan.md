@@ -43,6 +43,7 @@ Berdasarkan hasil pengecekan sertifikat digital pada website shopee.co.id menggu
 - Algoritma enkripsi:
   a. Sertifikat menggunakan SHA-256 sebagai algoritma hash
   b. TLS pada website e-commerce umumnya menggunakan RSA atau ECDHE untuk pertukaran kunci dan AES untuk enkripsi data            sesi
+
 Perbandingan HTTPS dan HTTP:
 - Website HTTPS (Shopee): data terenkripsi, ada autentikasi server, aman dari penyadapan
 - Website HTTP (tanpa HTTPS): data dikirim dalam teks biasa, mudah disadap, tidak aman untuk login dan transaksi
