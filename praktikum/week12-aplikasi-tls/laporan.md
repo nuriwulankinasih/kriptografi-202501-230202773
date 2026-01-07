@@ -101,9 +101,10 @@ Stallings, W. Cryptography and Network Security.
 ---
 
 ## Commit Log
-commit week12-aplikasi-tls 
-Author: Nuri Wulan Kinasih <kinasihnuri60@gmail.com>
-Date: 2026-01-07
-week12-apliaksi-tls: implementasi Aplikasi TLS & E-commerce Shopee
+```
+commit week12-aplikasi-tls
+Author:  Nuri Wulan Kinasih <kinasihnuri60@gmail.com>
+Date:   2025-01-06
 
----
+    week12-aplikasi-tls: Aplikasi TLS & E-commerce 
+```
