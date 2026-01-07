@@ -33,19 +33,19 @@ Penerapan TLS juga meningkatkan kepercayaan pengguna terhadap platform e-commerc
 
 ## 4. Langkah Percobaan
 ### Langkah 1 - Analisis SSL/TLS pada Email & Web (Shopee)
-    Berdasarkan hasil pengecekan sertifikat digital pada website shopee.co.id menggunakan browser Google Chrome, dapat          diketahui bahwa Shopee telah menggunakan protokol HTTPS yang menandakan koneksi aman dan terenkripsi. Sertifikat            digital tersebut diterbitkan untuk domain *.shopee.co.id, yang berarti mencakup seluruh subdomain Shopee.
-    - Issuer Certificate Authority (CA):
-      Sertifikat Shopee diterbitkan oleh GlobalSign GCC R6 AlphaSSL CA 2023, dengan organisasi penerbit GlobalSign nv-sa,          yang merupakan Certificate Authority terpercaya secara global.
-    - Masa berlaku sertifikat:
-      Diterbitkan pada: 24 Maret 2025
-      Kedaluwarsa pada: 25 April 2026
-      Hal ini menunjukkan sertifikat masih valid dan aktif, sehingga aman digunakan.
-    - Algoritma enkripsi:
-      a. Sertifikat menggunakan SHA-256 sebagai algoritma hash
-      b. TLS pada website e-commerce umumnya menggunakan RSA atau ECDHE untuk pertukaran kunci dan AES untuk enkripsi data            sesi
-    Perbandingan HTTPS dan HTTP:
-    - Website HTTPS (Shopee): data terenkripsi, ada autentikasi server, aman dari penyadapan
-    - Website HTTP (tanpa HTTPS): data dikirim dalam teks biasa, mudah disadap, tidak aman untuk login dan transaksi
+Berdasarkan hasil pengecekan sertifikat digital pada website shopee.co.id menggunakan browser Google Chrome, dapat          diketahui bahwa Shopee telah menggunakan protokol HTTPS yang menandakan koneksi aman dan terenkripsi. Sertifikat            digital tersebut diterbitkan untuk domain *.shopee.co.id, yang berarti mencakup seluruh subdomain Shopee.
+- Issuer Certificate Authority (CA):
+  Sertifikat Shopee diterbitkan oleh GlobalSign GCC R6 AlphaSSL CA 2023, dengan organisasi penerbit GlobalSign nv-sa,          yang merupakan Certificate Authority terpercaya secara global.
+- Masa berlaku sertifikat:
+  Diterbitkan pada: 24 Maret 2025
+  Kedaluwarsa pada: 25 April 2026
+  Hal ini menunjukkan sertifikat masih valid dan aktif, sehingga aman digunakan.
+- Algoritma enkripsi:
+  a. Sertifikat menggunakan SHA-256 sebagai algoritma hash
+  b. TLS pada website e-commerce umumnya menggunakan RSA atau ECDHE untuk pertukaran kunci dan AES untuk enkripsi data            sesi
+Perbandingan HTTPS dan HTTP:
+- Website HTTPS (Shopee): data terenkripsi, ada autentikasi server, aman dari penyadapan
+- Website HTTP (tanpa HTTPS): data dikirim dalam teks biasa, mudah disadap, tidak aman untuk login dan transaksi
 
 ### Langkah 2 — Studi Kasus E-commerce (Shopee)
 Pada website Shopee, enkripsi TLS digunakan untuk melindungi data sensitif pengguna, seperti username, password, informasi pembayaran, dan detail transaksi. Ketika pengguna melakukan login atau checkout, data akan dienkripsi sebelum dikirim ke server, sehingga pihak ketiga tidak dapat membaca atau memodifikasi isi data tersebut.
