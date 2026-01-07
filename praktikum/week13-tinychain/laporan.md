@@ -3,6 +3,7 @@ Minggu ke-: 13
 Topik: TinyChain – Proof of Work (PoW)
 
 Nama: Nuri Wulan Kinasih
+
 NIM: 230202773
 Kelas: 5IKRB  
 
