@@ -42,6 +42,7 @@ Berdasarkan hasil pengecekan sertifikat digital pada website shopee.co.id menggu
   Hal ini menunjukkan sertifikat masih valid dan aktif, sehingga aman digunakan.
 - Algoritma enkripsi:
   a. Sertifikat menggunakan SHA-256 sebagai algoritma hash
+  
   b. TLS pada website e-commerce umumnya menggunakan RSA atau ECDHE untuk pertukaran kunci dan AES untuk enkripsi data            sesi
 
 Perbandingan HTTPS dan HTTP:
