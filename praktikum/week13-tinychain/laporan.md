@@ -17,16 +17,19 @@ Kelas: 5IKRB
 ---
 
 ## 2. Dasar Teori
-(Ringkas teori relevan (cukup 2–3 paragraf).  
-Contoh: definisi cipher klasik, konsep modular aritmetika, dll.  )
+TinyChain merupakan contoh sederhana dari sistem blockchain yang digunakan untuk mempelajari konsep dasar blockchain, termasuk mekanisme konsensus Proof of Work (PoW). Dalam TinyChain, PoW digunakan untuk menentukan blok mana yang sah untuk ditambahkan ke dalam rantai. Proses ini dilakukan dengan mencari nilai nonce tertentu sehingga hasil fungsi hash dari data blok memenuhi tingkat kesulitan yang ditentukan, misalnya menghasilkan hash dengan awalan nol.
+
+Setiap blok dalam TinyChain berisi data transaksi, hash blok sebelumnya, timestamp, dan nonce. Hash blok sebelumnya berfungsi untuk menghubungkan antarblok sehingga membentuk rantai yang saling bergantung. Jika terdapat perubahan data pada satu blok, maka hash akan berubah dan menyebabkan blok-blok setelahnya menjadi tidak valid. Hal ini menunjukkan bagaimana PoW dan fungsi hash bekerja bersama untuk menjaga integritas dan keamanan data.
+
+Selain menjaga integritas data, Proof of Work pada TinyChain juga berperan dalam mencegah kecurangan seperti double spending. Karena proses penambahan blok memerlukan komputasi yang sulit dan memakan waktu, upaya untuk memanipulasi data atau menambahkan blok palsu menjadi sangat tidak efisien dan sulit dilakukan.
 
 ---
 
 ## 3. Alat dan Bahan
-(- Python 3.x  
-- Visual Studio Code / editor lain  
+- Python 3.14
+- Visual Studio Code 
 - Git dan akun GitHub  
-- Library tambahan (misalnya pycryptodome, jika diperlukan)  )
+- Google Chrome
 
 ---
 
@@ -68,10 +71,15 @@ Hasil eksekusi program Caesar Cipher:
 ---
 
 ## 7. Jawaban Pertanyaan
-(Jawab pertanyaan diskusi yang diberikan pada modul.  
-- Pertanyaan 1: …  
-- Pertanyaan 2: …  
-)
+1. Mengapa fungsi hash sangat penting dalam blockchain?
+2. Bagaimana Proof of Work mencegah double spending?
+3. Apa kelemahan dari PoW dalam hal efisiensi energi?
+
+Jawaban:
+1. Fungsi hash sangat penting karena digunakan untuk menjaga keamanan dan integritas data dalam blockchain. Setiap transaksi diubah menjadi nilai hash yang unik. Jika data diubah sedikit saja, nilai hash akan berubah total sehingga manipulasi data dapat langsung terdeteksi. Selain itu, hash juga digunakan untuk menghubungkan antarblok sehingga data bersifat tidak dapat diubah (immutable).
+2. Proof of Work mencegah double spending dengan cara mewajibkan penambang melakukan perhitungan matematika yang kompleks sebelum sebuah transaksi dinyatakan valid. Hanya blok yang berhasil menyelesaikan perhitungan tersebut yang dapat ditambahkan ke blockchain. Setelah transaksi tercatat dalam blok yang sah, transaksi tersebut tidak dapat digunakan kembali, sehingga mencegah terjadinya pengeluaran ganda.
+3. Kelemahan utama PoW adalah penggunaan energi yang sangat besar karena proses penambangan memerlukan perhitungan komputasi secara terus-menerus. Energi yang digunakan sebagian besar hanya untuk mencari hash yang sesuai, sehingga kurang efisien dan berdampak pada lingkungan. Oleh karena itu, PoW dianggap tidak ramah energi dibandingkan metode konsensus lainnya.
+
 ---
 
 ## 8. Kesimpulan
@@ -88,12 +96,10 @@ Contoh:
 ---
 
 ## 10. Commit Log
-(Tuliskan bukti commit Git yang relevan.  
-Contoh:
 ```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
+commit week13-tinychain
+Author: Nuri Wulan Kinasih <kinasihnuri60@gmail.com>
+Date:   2025-01-12
 
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
+    week13-tinychain: TinyChain – Proof of Work (PoW)
 ```
