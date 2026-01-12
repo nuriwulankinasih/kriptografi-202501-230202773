@@ -10,21 +10,26 @@ Kelas: 5IKRB
 ---
 
 ## 1. Tujuan
-(Tuliskan tujuan pembelajaran praktikum sesuai modul.)
+1. Mengidentifikasi jenis serangan pada sistem informasi nyata.
+2. Mengevaluasi kelemahan algoritma kriptografi yang digunakan.
+3. Memberikan rekomendasi algoritma kriptografi yang sesuai untuk perbaikan keamanan.
 
 ---
 
 ## 2. Dasar Teori
-(Ringkas teori relevan (cukup 2–3 paragraf).  
-Contoh: definisi cipher klasik, konsep modular aritmetika, dll.  )
+Analisis Serangan Kriptografi adalah proses mempelajari dan mengevaluasi berbagai metode serangan yang dapat digunakan untuk melemahkan atau menembus sistem kriptografi. Tujuan utama analisis ini bukan untuk merusak sistem, melainkan untuk mengidentifikasi celah keamanan sehingga algoritma, protokol, atau implementasi kriptografi dapat diperbaiki dan diperkuat. Dengan analisis serangan, pengembang dapat memastikan bahwa sistem kriptografi benar-benar aman ketika digunakan di dunia nyata.
+
+Serangan kriptografi dapat dilakukan dengan berbagai pendekatan, seperti brute force attack, cryptanalysis attack, dan side-channel attack. Brute force attack mencoba semua kemungkinan kunci hingga menemukan kunci yang benar, sedangkan cryptanalysis memanfaatkan kelemahan matematis dari algoritma. Side-channel attack tidak menyerang algoritma secara langsung, tetapi memanfaatkan informasi dari proses implementasi, seperti waktu eksekusi, konsumsi daya, atau pola akses memori.
+
+Melalui analisis serangan kriptografi, sistem keamanan dapat dievaluasi dari sisi teori maupun praktik. Hasil analisis ini digunakan untuk menentukan tingkat kekuatan algoritma, memilih ukuran kunci yang aman, serta memastikan bahwa implementasi kriptografi tidak mudah dieksploitasi. Oleh karena itu, analisis serangan kriptografi merupakan bagian penting dalam pengembangan sistem keamanan informasi yang andal.
 
 ---
 
 ## 3. Alat dan Bahan
-(- Python 3.x  
-- Visual Studio Code / editor lain  
+- Python 3.14
+- Visual Studio Code 
 - Git dan akun GitHub  
-- Library tambahan (misalnya pycryptodome, jika diperlukan)  )
+- Google Chrome
 
 ---
 
@@ -66,10 +71,15 @@ Hasil eksekusi program Caesar Cipher:
 ---
 
 ## 7. Jawaban Pertanyaan
-(Jawab pertanyaan diskusi yang diberikan pada modul.  
-- Pertanyaan 1: …  
-- Pertanyaan 2: …  
-)
+1. Mengapa banyak sistem lama masih rentan terhadap brute force atau dictionary attack?
+2. Apa bedanya kelemahan algoritma dengan kelemahan implementasi?
+3. Bagaimana organisasi dapat memastikan sistem kriptografi mereka tetap aman di masa depan?
+
+Jawaban:
+1. Banyak sistem lama masih rentan karena menggunakan algoritma kriptografi yang sudah usang, ukuran kunci yang pendek, serta metode penyimpanan kata sandi yang tidak aman, seperti hash tanpa salt atau bahkan teks biasa. Selain itu, sistem lama sering tidak menerapkan pembatasan percobaan login, sehingga penyerang dapat mencoba banyak kombinasi kata sandi secara otomatis tanpa terdeteksi.
+2. Kelemahan algoritma berkaitan dengan desain matematis algoritma kriptografi itu sendiri, misalnya algoritma yang secara teori dapat dipecahkan atau memiliki celah kriptografi. Sementara itu, kelemahan implementasi terjadi ketika algoritma yang sebenarnya aman diterapkan dengan cara yang salah, seperti penggunaan kunci yang lemah, manajemen kunci yang buruk, atau kesalahan pemrograman yang membuka peluang serangan.
+3. Organisasi dapat memastikan keamanan dengan cara menggunakan algoritma dan standar kriptografi terbaru, menerapkan ukuran kunci yang direkomendasikan, serta melakukan pembaruan sistem secara berkala. Selain itu, audit keamanan, pengujian penetrasi, dan pemantauan terhadap perkembangan serangan kriptografi juga penting agar sistem dapat beradaptasi terhadap ancaman baru.
+
 ---
 
 ## 8. Kesimpulan
@@ -86,12 +96,11 @@ Contoh:
 ---
 
 ## 10. Commit Log
-(Tuliskan bukti commit Git yang relevan.  
-Contoh:
 ```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
+commit week14-analisis-serangan
+Author: Nuri Wulan Kinasih <kinasihnuri60@gmail.com>
+Date:   2025-01-12
 
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
+    week14-analisis-serangan: Analisis Serangan Kriptografi
+
 ```
