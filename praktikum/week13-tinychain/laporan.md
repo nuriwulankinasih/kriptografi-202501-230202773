@@ -103,6 +103,7 @@ Hasil eksekusi program tinychain:
 <img width="1920" height="1080" alt="tinychain" src="https://github.com/user-attachments/assets/19ebcf23-6432-497b-9981-ee63293426ab" />
 
 Pembahasan:
+
 Hasil eksekusi menunjukkan bahwa mekanisme Proof of Work (PoW) berjalan dengan baik. Setiap blok berhasil ditambang dengan menghasilkan hash yang diawali empat angka nol sesuai tingkat difficulty = 4, yang diperoleh melalui proses percobaan nilai nonce secara berulang.
 
 Perbedaan hash pada setiap blok membuktikan bahwa setiap blok unik dan saling terhubung melalui previous_hash, sehingga perubahan data pada satu blok akan memengaruhi seluruh rantai. Ini menunjukkan fungsi PoW dalam menjaga keamanan dan integritas blockchain.
