@@ -83,6 +83,7 @@ Contoh format:
             self.chain.append(new_block)
 
 Hasilnya:
+
     Mining block 1...
     Block mined: 00005b5ff03d03317662d2afaf2d297e517ec7a9ed746ec5a6580757145deff5
     Mining block 2...
