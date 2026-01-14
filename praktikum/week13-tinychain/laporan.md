@@ -34,11 +34,11 @@ Selain menjaga integritas data, Proof of Work pada TinyChain juga berperan dalam
 ---
 
 ## 4. Langkah Percobaan
-(Tuliskan langkah yang dilakukan sesuai instruksi.  
-Contoh format:
-1. Membuat file `caesar_cipher.py` di folder `praktikum/week2-cryptosystem/src/`.
+1. Membuat file `tinychain.py` di folder `praktikum/week13-tinychain/src/.`
 2. Menyalin kode program dari panduan praktikum.
-3. Menjalankan program dengan perintah `python caesar_cipher.py`.)
+3. Menjalankan program dengan perintah `python tinychain.py`
+4. Mengerjakan laporan.md
+5. Membuat file hasil.png di folder praktikum/week13-tinychain/sreenshoot/
 
 ---
 
@@ -90,8 +90,11 @@ Hasilnya:
     Block mined: 0000a5eda092731c49f7e28c278be4d3e8a4922c34493f76b770a2b1f84ef2ce
 
 ### Langkah 3 - Analisis Proof of Work
+Berdasarkan hasil eksekusi program, terlihat bahwa setiap blok harus melalui proses mining sebelum dapat ditambahkan ke dalam blockchain. Proses mining ini dilakukan dengan mekanisme Proof of Work (PoW), yaitu mencari nilai nonce yang menghasilkan hash dengan awalan sejumlah nol sesuai tingkat difficulty yang ditentukan (pada program ini difficulty = 4).
 
+Hasil output menunjukkan bahwa hash blok yang berhasil ditambang selalu diawali dengan “0000”. Hal ini menandakan bahwa sistem telah melakukan perhitungan hash berulang kali hingga menemukan hash yang memenuhi syarat. Semakin besar nilai difficulty, maka semakin sulit dan lama proses mining karena membutuhkan lebih banyak percobaan.
 
+Dengan PoW, blockchain menjadi lebih aman karena perubahan data pada satu blok akan mengubah hash dan memaksa penambangan ulang seluruh blok berikutnya. Mekanisme ini mencegah manipulasi data dan memastikan integritas blockchain, sebagaimana ditunjukkan pada proses mining blok 1 dan blok 2 pada hasil percobaan.
 
 ---
 
@@ -100,7 +103,9 @@ Hasil eksekusi program tinychain:
 <img width="1920" height="1080" alt="struktur blok" src="https://github.com/user-attachments/assets/28d69e41-daca-4858-a24b-fe66c430ea6c" />
 
 Pembahasan:
+Hasil eksekusi menunjukkan bahwa mekanisme Proof of Work (PoW) berjalan dengan baik. Setiap blok berhasil ditambang dengan menghasilkan hash yang diawali empat angka nol sesuai tingkat difficulty = 4, yang diperoleh melalui proses percobaan nilai nonce secara berulang.
 
+Perbedaan hash pada setiap blok membuktikan bahwa setiap blok unik dan saling terhubung melalui previous_hash, sehingga perubahan data pada satu blok akan memengaruhi seluruh rantai. Ini menunjukkan fungsi PoW dalam menjaga keamanan dan integritas blockchain.
 
 ---
 
@@ -117,16 +122,11 @@ Jawaban:
 ---
 
 ## 8. Kesimpulan
-(Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
+Berdasarkan praktikum yang telah dilakukan, dapat disimpulkan bahwa mekanisme Proof of Work (PoW) pada TinyChain berhasil menunjukkan cara kerja blockchain dalam menjaga integritas dan keamanan data. Proses mining membuktikan bahwa setiap blok harus memenuhi tingkat kesulitan tertentu sebelum dapat ditambahkan ke dalam rantai, sehingga mencegah manipulasi data. Dengan demikian, fungsi hash dan PoW berperan penting dalam memastikan keandalan dan keamanan sistem blockchain, meskipun memiliki kelemahan dari sisi efisiensi energi.
 
 ---
 
 ## 9. Daftar Pustaka
-(Cantumkan referensi yang digunakan.  
-Contoh:  
-- Katz, J., & Lindell, Y. *Introduction to Modern Cryptography*.  
-- Stallings, W. *Cryptography and Network Security*.  )
-
 ---
 
 ## 10. Commit Log
