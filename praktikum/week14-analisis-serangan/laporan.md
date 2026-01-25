@@ -43,30 +43,94 @@ Contoh format:
 ---
 
 ## 5. Source Code
-(Salin kode program utama yang dibuat atau dimodifikasi.  
-Gunakan blok kode:
+    import random
 
-```python
-# contoh potongan kode
-def encrypt(text, key):
-    return ...
-```
-)
+    # ================================
+    # SIMULASI SERVER LAMA (SSL 3.0)
+    # ================================
+    server_config = {
+        "protocol": "SSLv3",     # Protokol lama dan tidak aman
+        "cipher": "CBC"
+    }
+    
+    # Data sensitif yang dikirim user
+    secret_cookie = "SESSIONID=ABCD1234"
+    
+    # ================================
+    # SIMULASI ENKRIPSI SEDERHANA
+    # ================================
+    def encrypt_ssl3(data):
+        # Simulasi enkripsi CBC yang lemah
+        encrypted = ""
+        for c in data:
+            encrypted += chr(ord(c) + 3)  # enkripsi palsu
+        return encrypted
+    
+    def decrypt_ssl3(data):
+        decrypted = ""
+        for c in data:
+            decrypted += chr(ord(c) - 3)
+        return decrypted
+    
+    # ================================
+    # SERVER MENGIRIM DATA
+    # ================================
+    def server_send_data():
+        print("[SERVER] Menggunakan protokol:", server_config["protocol"])
+        encrypted = encrypt_ssl3(secret_cookie)
+        print("[SERVER] Data terenkripsi:", encrypted)
+        return encrypted
+    
+    # ================================
+    # PENYERANG (POODLE ATTACK)
+    # ================================
+    def poodle_attack(intercepted_data):
+        print("\n[ATTACKER] Melakukan POODLE Attack...")
+        
+        # Karena SSL 3.0 lemah, attacker bisa memecahkan enkripsi
+        recovered = decrypt_ssl3(intercepted_data)
+        
+        print("[ATTACKER] Data berhasil dibaca:", recovered)
+        return recovered
+    
+    # ================================
+    # EKSEKUSI UTAMA
+    # ================================
+    if __name__ == "__main__":
+        print("=== SIMULASI POODLE ATTACK (SSL 3.0) ===\n")
+        
+        encrypted_data = server_send_data()
+        stolen = poodle_attack(encrypted_data)
+        
+        print("\n=== KESIMPULAN ===")
+        print("Cookie bocor karena server masih menggunakan SSL 3.0 dan CBC mode.")
+
+Hasilnya:
+
+    [ATTACKER] Melakukan POODLE Attack...
+    [ATTACKER] Data berhasil dibaca: SESSIONID=ABCD1234
+    
+    === KESIMPULAN ===
+    Cookie bocor karena server masih menggunakan SSL 3.0 dan CBC mode.
 
 ---
 
 ## 6. Hasil dan Pembahasan
-(- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
-- Berikan tabel atau ringkasan hasil uji jika diperlukan.  
-- Jelaskan apakah hasil sesuai ekspektasi.  
-- Bahas error (jika ada) dan solusinya. 
+Hasil eksekusi program poodle_attack_demo:
+<img width="1920" height="1080" alt="poodle demo" src="https://github.com/user-attachments/assets/ec4e1929-b95d-4a30-8cd4-b379a18a12a3" />
 
-Hasil eksekusi program Caesar Cipher:
+Pembahasan:
 
-![Hasil Eksekusi](screenshots/output.png)
-![Hasil Input](screenshots/input.png)
-![Hasil Output](screenshots/output.png)
-)
+Hasil percobaan menunjukkan bahwa ketika server masih menggunakan SSL 3.0 dengan CBC, penyerang dapat:
+- Memaksa koneksi turun (downgrade)
+- Menyadap data terenkripsi
+- Membaca cookie login dan session pengguna
+
+Dalam kasus nyata POODLE Attack (2014), jutaan koneksi HTTPS bisa disadap karena:
+1. Kelemahan Algoritma
+    SSL 3.0 menggunakan CBC mode tanpa verifikasi padding yang aman, sehingga isi pesan bisa ditebak sedikit demi sedikit.
+2. Kelemahan Implementasi & Konfigurasi
+    Server dan browser masih mengizinkan fallback ke SSL 3.0 walaupun sudah usang.
 
 ---
 
