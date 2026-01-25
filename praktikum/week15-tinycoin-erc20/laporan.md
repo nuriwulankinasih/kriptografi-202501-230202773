@@ -141,5 +141,5 @@ commit week15-tinycoin-erc20
 Author: Nuri Wulan Kinasih <kinasihnuri60@gmail.com>
 Date:   2026-01-25
 
-    week15-tinycoin-erc20: implementasi Caesar Cipher dan laporan )
+    week15-tinycoin-erc20: TinyCoin ERC20
 ```
