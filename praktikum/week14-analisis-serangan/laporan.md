@@ -34,11 +34,18 @@ Melalui analisis serangan kriptografi, sistem keamanan dapat dievaluasi dari sis
 ---
 
 ## 4. Langkah Percobaan
-(Tuliskan langkah yang dilakukan sesuai instruksi.  
-Contoh format:
-1. Membuat file `caesar_cipher.py` di folder `praktikum/week2-cryptosystem/src/`.
-2. Menyalin kode program dari panduan praktikum.
-3. Menjalankan program dengan perintah `python caesar_cipher.py`.)
+1. Membuat file `poodle_attack_demo.py` di folder `praktikum/week14-analisis-serangan/src/`.
+2. Menyalin kode simulasi server dan penyerang
+3. Menuliskan kode program yang mensimulasikan:
+    - Server yang menggunakan SSL 3.0
+    - Proses enkripsi data
+    - Penyerang yang melakukan POODLE Attack untuk membaca data terenkripsi.
+4. Menjalankan program dengan perintah `python poodle_attack_demo.py`
+5. Mengamati output program yang menampilkan:
+    - Protokol yang digunakan server (SSL 3.0)
+    - Data dalam bentuk terenkripsi
+    - Data rahasia (cookie/session) yang berhasil dibaca oleh penyerang.
+5. Mencatat bahwa kebocoran data terjadi karena server masih menggunakan SSL/TLS lama yang tidak aman.
 
 ---
 
@@ -147,23 +154,18 @@ Jawaban:
 ---
 
 ## 8. Kesimpulan
-(Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
+Berdasarkan hasil praktikum ini, dapat disimpulkan bahwa penggunaan protokol kriptografi lama seperti SSL 3.0 dengan mode enkripsi CBC sangat berisiko terhadap kebocoran data karena memiliki kelemahan desain dan konfigurasi yang dapat dieksploitasi melalui serangan seperti POODLE Attack. Simulasi yang dilakukan menunjukkan bahwa data sensitif berupa cookie sesi dapat dibaca oleh penyerang ketika koneksi berhasil diturunkan (downgrade) ke protokol yang tidak aman. Oleh karena itu, sistem informasi harus menggunakan protokol dan algoritma kriptografi modern seperti TLS 1.2 atau TLS 1.3 dengan cipher yang aman agar kerahasiaan dan integritas data tetap terjaga dari ancaman serangan kriptografi.
 
 ---
 
 ## 9. Daftar Pustaka
-(Cantumkan referensi yang digunakan.  
-Contoh:  
-- Katz, J., & Lindell, Y. *Introduction to Modern Cryptography*.  
-- Stallings, W. *Cryptography and Network Security*.  )
-
 ---
 
 ## 10. Commit Log
 ```
 commit week14-analisis-serangan
 Author: Nuri Wulan Kinasih <kinasihnuri60@gmail.com>
-Date:   2025-01-12
+Date:   2026-01-25
 
     week14-analisis-serangan: Analisis Serangan Kriptografi
 
