@@ -36,10 +36,9 @@ Memasuki tahun 2026, eksistensi proyek-proyek seperti TinyCoin sangat bergantung
 1. Membuat file `TinyCoin.sol` di folder `contracs` pada Remix.IDE
 2. Menyalin kode program dari panduan praktikum.
 3. Menjalankan program dengan klik menu compile.
-4. Melakukan Deploy & run transactions
-5. Melakukan transfer pada kolom TRANSFER dibawah Deployed Contracts dengan memasukan alamat account wallet lain lalu transact.
-6. Mengecek jumlah token TNC pada kolom BalanceOF dengan memasukan alamat account.
-
+4. Memasukkan argumen initialSupply sebesar 1000.
+5. Melakukan Deploy & run transactions.
+6. Pengujian Fungsi: Menguji fungsi balanceOf dan transfer.
 ---
 
 ## 5. Source Code
@@ -92,25 +91,8 @@ Memasuki tahun 2026, eksistensi proyek-proyek seperti TinyCoin sangat bergantung
 ---
 
 ## 6. Hasil dan Pembahasan
-Hasil eksekusi program tinycoin.sol di REMIX.IDE :
-<img width="1920" height="1080" alt="hasil tinycoin2" src="https://github.com/user-attachments/assets/8da04fa3-4f3a-4b4e-be9d-6cdffb1582f9" />
-Hasil pada Remix menunjukkan bahwa smart contract TinyCoin telah berhasil di-deploy ke jaringan Sepolia Testnet melalui MetaMask, ditandai dengan transaksi constructor yang sukses dan munculnya alamat kontrak pada bagian Deployed Contracts; ini berarti seluruh total supply token TNC sudah dibuat dan otomatis masuk ke wallet MetaMask yang kamu gunakan saat deploy, sehingga kontrak siap dipakai untuk melakukan transfer token ke alamat wallet lain di jaringan Sepolia.
-
-Hasil Deploy dan Transfer Smart Contract TinyCoin di Remix:
-<img width="1920" height="1080" alt="hasil tinycoin2" src="https://github.com/user-attachments/assets/43026ad3-31c6-4580-b22a-6dc43bb3ec48" />
-Tampilan tersebut menunjukkan bahwa fungsi transfer(address to, uint256 amount) pada smart contract TinyCoin sudah berhasil dikompilasi dan kontrak telah di-deploy di jaringan Sepolia Testnet, sehingga wallet MetaMask yang melakukan deploy kini memiliki seluruh saldo awal TNC dan siap menggunakan fungsi transfer di Remix untuk mengirim token ke alamat wallet lain dengan memasukkan alamat tujuan dan jumlah token (dalam satuan 10¹⁸).
-
-Hasil Transfer akun 1 ke akun 2: 
-<img width="959" height="539" alt="hasil tinycoin3" src="https://github.com/user-attachments/assets/258c36ac-61ea-4009-be14-04f99cc116d8" />
-Hasil ini menunjukan transfer ke akun 2 (culan) berhasil, pada kolom TRANSFER masukan alamat walet akun 2 (culan) dan masukan jumlah yg ingin di transfer 1 TNC (1000000000000000000), dan pada metamask terlihat akun 2 sudah bertambah menjadi 2 (karena saya sudah transfer 1 sebelumnya).
-
-Hasil cek token TNC pada remix:
-<img width="967" height="539" alt="hasil tinycoin4" src="https://github.com/user-attachments/assets/4f6db82b-c815-4736-9d43-3a07fc26d820" />
-Gambar ini menjukkan hasil cek token TNC akun 1 (nuri wulan) pada remix, dengan masukan alamat wallet akun 1 pada kolom BalanceOF dan setelah itu dibawahnya akan muncul keterangan jumlahnya yang sesuai dengan yang ada pada metamask.
-
-Hasil transfer balik akun 2 ke akun 1:
-<img width="959" height="539" alt="tinycoin transfer balik" src="https://github.com/user-attachments/assets/31c6621d-b7dc-4a81-a4af-0c764baf13b6" />
-Pada gambar ini terlihat pengurangan token pada akun 2 karena sudah di transfer balik ke akun 1 sebesar 1 tinycoin. 
+<img width="1920" height="1080" alt="ERC-20" src="https://github.com/user-attachments/assets/925fd63d-f866-493c-8e63-e337d5008219" />
+Hasil pada Remix menunjukkan bahwa smart contract TinyCoin (TNC) telah berhasil dikompilasi dan dideploy ke blockchain, yang dibuktikan dengan munculnya alamat contract 0xD4Fc541236927E2EAf8F27606bD7309C1Fc2cbee pada bagian Deployed Contracts; hal ini menandakan bahwa token ERC-20 telah aktif dan siap digunakan untuk menyimpan serta mengelola saldo token pengguna, menjalankan proses transfer, dan menjadi dasar sistem reward berbasis blockchain seperti pada proyek kuis kriptografi, sehingga setiap transaksi token yang terjadi akan tercatat secara transparan dan aman di jaringan blockchain.
 
 ---
 
@@ -128,7 +110,7 @@ Jawaban:
 ---
 
 ## 8. Kesimpulan
-Berdasarkan hasil praktikum, proyek TinyCoin berbasis standar ERC-20 berhasil diimplementasikan dan diuji pada jaringan Sepolia Testnet menggunakan Remix dan MetaMask, mulai dari proses deploy smart contract hingga pengujian transfer token antar akun, yang membuktikan bahwa mekanisme pembuatan, penyimpanan saldo, dan pengiriman token berjalan sesuai dengan spesifikasi ERC-20; melalui kegiatan ini, mahasiswa tidak hanya memahami konsep kriptografi dan smart contract secara teoretis, tetapi juga memperoleh pengalaman praktis dalam membangun, memverifikasi, dan mengelola aset digital secara aman di lingkungan blockchain.
+Implementasi smart contract TinyCoin (TNC) telah berhasil dilakukan dengan baik, di mana token ERC-20 berhasil dideploy ke blockchain dan dapat berfungsi sebagai media pertukaran dan reward digital dalam sistem yang dibangun, sehingga mendukung penerapan konsep kriptografi dan blockchain secara nyata melalui transaksi yang aman, transparan, dan terdesentralisasi untuk meningkatkan interaksi dan motivasi pengguna dalam aplikasi kuis berbasis token.
 
 ---
 
