@@ -110,7 +110,7 @@ Jawaban:
 ---
 
 ## 8. Kesimpulan
-Implementasi smart contract TinyCoin (TNC) telah berhasil dilakukan dengan baik, di mana token ERC-20 berhasil dideploy ke blockchain dan dapat berfungsi sebagai media pertukaran dan reward digital dalam sistem yang dibangun, sehingga mendukung penerapan konsep kriptografi dan blockchain secara nyata melalui transaksi yang aman, transparan, dan terdesentralisasi untuk meningkatkan interaksi dan motivasi pengguna dalam aplikasi kuis berbasis token.
+Smart contract TinyCoin (TNC) telah berhasil dikompilasi dan dideploy tanpa error, yang ditandai dengan munculnya alamat contract di bagian Deployed Contracts serta log transaksi yang berhasil, sehingga token ERC-20 ini sudah aktif di blockchain dan siap digunakan untuk proses penyimpanan saldo, transfer token, dan pengujian fungsionalitas dalam sistem kuis atau reward berbasis blockchain.
 
 ---
 
