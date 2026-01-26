@@ -1,14 +1,22 @@
 # Laporan Praktikum Kriptografi
-Minggu ke-: X  
-Topik: [judul praktikum]  
-Nama: [Nama Mahasiswa]  
-NIM: [NIM Mahasiswa]  
-Kelas: [Kelas]  
+Minggu ke-: 16
+
+Topik: UAS KRIPTOGRAFI EDUTOKEN
+
+Nama: Nuri Wulan Kinasih
+
+NIM: 230202773   
+
+Kelas: 5IKRB  
 
 ---
 
 ## 1. Tujuan
-(Tuliskan tujuan pembelajaran praktikum sesuai modul.)
+Projek EduToken dikembangkan dengan beberapa tujuan utama, yaitu:
+1.	Mengimplementasikan konsep kriptografi dalam aplikasi pembelajaran berbasis web berbasis blockchain untuk memberikan pemahaman praktis kepada pengguna.
+2.	Mengembangkan platform pembelajaran interaktif yang mengintegrasikan materi kriptografi, kuis, dan sistem reward token digital.
+3.	Menerapkan teknologi blockchain Ethereum melalui smart contract ERC-20 serta penggunaan MetaMask pada jaringan Sepolia Testnet.
+4.	Mendemonstrasikan penerapan protokol keamanan, termasuk hashing, autentikasi, integritas data, dan transaksi token digital.
 
 ---
 
